@@ -1,0 +1,9 @@
+//Mixins
+
+@mixin titlePageName {
+
+  font-family: $title-font;
+  font-size:90px;
+  position: fixed;
+
+}

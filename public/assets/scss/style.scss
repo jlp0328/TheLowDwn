@@ -1,0 +1,40 @@
+@import "mixins";
+
+$title-font: 'Monoton', cursive;
+$background-color: #42b6b2;
+$title-font-color: #b64280;
+
+.appName{
+  @include titlePageName;
+  color: $title-font-color;
+        bottom: 0;
+}
+
+.appNameTwo{
+  @include titlePageName;
+    color: lighten($title-font-color, 40%);
+        bottom: 100px
+}
+
+.appNameThree{
+  @include titlePageName;
+  color: lighten($title-font-color, 60%);
+  bottom: 200px;
+}
+
+.appNameFour{
+  @include titlePageName;
+  color: lighten($title-font-color, 80%);
+  bottom: 300px;
+}
+
+.appNameFive{
+  @include titlePageName;
+  color: lighten($title-font-color, 100%);
+  bottom: 400px;
+}
+
+.landingPage{
+  background-color: $background-color;
+  height: 100vh;
+}
