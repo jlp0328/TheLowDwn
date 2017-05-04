@@ -1,2 +1,59 @@
-.appName{font-family:"Monoton",cursive;font-size:90px;position:fixed;color:#b64280;bottom:0}.appNameTwo{font-family:"Monoton",cursive;font-size:90px;position:fixed;color:#f0d4e3;bottom:100px}.appNameThree{font-family:"Monoton",cursive;font-size:90px;position:fixed;color:#fff;bottom:200px}.appNameFour{font-family:"Monoton",cursive;font-size:90px;position:fixed;color:#fff;bottom:300px}.appNameFive{font-family:"Monoton",cursive;font-size:90px;position:fixed;color:#fff;bottom:400px}.landingPage{background-color:#42b6b2;height:100vh}
+.appName {
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  position: fixed;
+  text-align: center;
+  color: #b64280;
+  bottom: 0; }
+
+.appNameTwo {
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  position: fixed;
+  text-align: center;
+  color: #f0d4e3;
+  bottom: 100px; }
+
+.appNameThree {
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  position: fixed;
+  text-align: center;
+  color: white;
+  bottom: 200px; }
+
+.appNameFour {
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  position: fixed;
+  text-align: center;
+  color: white;
+  bottom: 300px; }
+
+.appNameFive {
+  font-family: "Monoton", cursive;
+  font-size: 90px;
+  position: fixed;
+  text-align: center;
+  color: white;
+  bottom: 400px; }
+
+.landingPage {
+  background-color: #42b6b2;
+  height: 100vh; }
+
+.loginButton {
+  position: fixed;
+  top: 0;
+  right: 200px;
+  max-height: 150px;
+  max-width: 150px; }
+
+.newUserButton {
+  position: fixed;
+  top: 80px;
+  right: 200px;
+  max-height: 150px;
+  max-width: 150px; }
+
 /*# sourceMappingURL=style.css.map */

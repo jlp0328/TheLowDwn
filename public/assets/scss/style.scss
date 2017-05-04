@@ -3,6 +3,8 @@
 $title-font: 'Monoton', cursive;
 $background-color: #42b6b2;
 $title-font-color: #b64280;
+$icon-height: 150px;
+$icon-width: 150px;
 
 .appName{
   @include titlePageName;
@@ -37,4 +39,21 @@ $title-font-color: #b64280;
 .landingPage{
   background-color: $background-color;
   height: 100vh;
+}
+
+.loginButton{
+  position: fixed;
+  top: 0;
+  right: 200px;
+  max-height: $icon-height;
+  max-width: $icon-width;
+}
+
+.newUserButton{
+  position: fixed;
+  top: 80px;
+  right: 200px;
+  max-height: $icon-height;
+  max-width: $icon-width;
+
 }
