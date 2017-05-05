@@ -13,7 +13,7 @@ var DaterSchema = new Schema ({
 		required: false
 	},
 	age: {
-		type: Integer,
+		type: String,
 		required: false
 	},
 	image: {
