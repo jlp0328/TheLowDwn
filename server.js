@@ -142,16 +142,21 @@ app.get('/auth/facebook/callback',
 
 //Scraping OkCupid based on daters username
 app.post("/dateScrape", function(req, res) {
+
   var result = {};
-  var daterName = req.body.daterName;
-  result.username= daterName;
-  request("https://www.okcupid.com/profile/" + daterName + "?cf=home_orbits,homepage_2015_tester_filters_feed", function(error, response, html) {
+  var daterName = req.body.username;
+
+  result.username = daterName;
+  console.log(daterName);
+
+  request("https://www.okcupid.com/profile/" + daterName + "?cf=profile_quickview", function(error, response, html) {
     var $ = cheerio.load(html);
+
     $(".userinfo2015").each(function (i, element) {
       //may need to add class of active somehow
-      result.image= $(element).find("img.active").attr("src");
-      result.age= $(element).find(".userinfo2015-basics-asl-age").text();
-      result.location= $(element),find(".userinfo2015-basics-asl-location").text();
+      result.image= $(this).find("img").attr("src");
+      result.age= $(this).find(".userinfo2015-basics-asl-age").text();
+      result.location= $(this).find(".userinfo2015-basics-asl-location").text();
       // result.username= $(element).find(".userinfo2015-basics-username").text();
     })
   });//end of scrape request
@@ -162,12 +167,14 @@ app.post("/dateScrape", function(req, res) {
       else {
         //req.body here? how to handle rest of input then?
         var entry = new Dater(result);
+
         entry.save(function(err, doc) {
+
           if (err) {
             console.log(err);
           }
           else {
-            res.json(doc);
+            res.send(doc);
             //Not SURE IF NEED THIS SINCE WANT TO SET IT FIRST TIME
             // Dater.where({ "_id": req.params.id }.update({ $set: { image: result.image}}).exec(function(error, doc) {
             //   if (error) {

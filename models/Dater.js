@@ -18,7 +18,7 @@ var DaterSchema = new Schema ({
 	},
 	image: {
 		type: String,
-		required: true
+		required: false
 	},
 	//need to look at which table this refers to
 	review: {

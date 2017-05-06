@@ -3,6 +3,9 @@
 @import "variables";
 @import "frontpage";
 
+body{
+  font-family: $body-font;
+}
 
 .navbar{
   font-family: $body-font;
