@@ -1,0 +1,31 @@
+    <h1 style="text-align: center; margin-bottom: 50px">Search Results</h1>
+
+    {{#each story}}
+    {{#if saved}}
+
+
+
+        <div class="card col-md-6" style="padding: 30px; text-align: center">
+
+            <img class="card-img-top" src="{{this.image}}">
+              <div class="card-block">
+              <p style="font-size: 15px" class="card-title">{{this.title}}</p>
+
+            <a data-status="{{this.saved}}" data-id="{{this._id}}" class="btn btn-primary takeNotes">Take notes!</a>
+
+            <a href="/saved" data-status="{{this.saved}}" data-id="{{this._id}}" class="btn btn-primary removeFavorite">UN-favorite!</a>
+            </div>
+
+            <div class="card col-md-6 notesSection" style="display: none" id="{{this._id}}">
+              <h4>Notes</h4>
+
+              <input type="text" id="newNote_{{this._id}}" style="margin-left: 65px; margin-bottom: 10px"/>
+
+
+              <a href="/saved" data-status="{{this.saved}}" data-id="{{this._id}}" class="btn btn-primary saveNotes" style="margin-left: 30px">Save Notes</a>
+            </div>
+
+        </div>
+
+    {{/if}}
+    {{/each}}

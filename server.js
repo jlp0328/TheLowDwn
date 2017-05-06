@@ -5,6 +5,7 @@ var flash = require("connect-flash");
 var session = require("express-session");
 var passport = require("passport");
 var exphbs = require("express-handlebars");
+var path = require("path");
 
 var mongoose = require("mongoose");
 
@@ -79,6 +80,9 @@ app.use(function(req, res, next){
 app.use("/", routes);
 app.use("/users", local);
 
+require("./routes/html-routes.js")(app);
+
+
 
 //Passport Initialization
 app.use(passport.initialize());
@@ -110,14 +114,8 @@ app.listen(port, function() {
 
 
 //Route to root and connect index.html
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
-// app.get("/register", function(req,res){
-
-//    res.render("register");
-
+// app.get("/", function(req, res) {
+//   res.sendFile(__dirname + "/public/index.html");
 // });
 
 app.get('/auth/facebook',
