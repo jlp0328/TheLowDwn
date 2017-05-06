@@ -137,6 +137,8 @@ app.get('/auth/facebook/callback',
 //Scraping OkCupid based on daters username
 app.post("/dateScrape", function(req, res) {
   var result = {};
+  var daterName = req.body.daterName;
+  result.daterName= daterName;
   request("https://www.okcupid.com/profile/" + daterName + "?cf=home_orbits,homepage_2015_tester_filters_feed", function(error, response, html) {
     var $ = cheerio.load(html);
     $(".userinfo2015").each(function (i, element) {
@@ -159,6 +161,7 @@ app.post("/dateScrape", function(req, res) {
             console.log(err);
           }
           else {
+            res.json(doc);
             //Not SURE IF NEED THIS SINCE WANT TO SET IT FIRST TIME
             // Dater.where({ "_id": req.params.id }.update({ $set: { image: result.image}}).exec(function(error, doc) {
             //   if (error) {
@@ -170,7 +173,7 @@ app.post("/dateScrape", function(req, res) {
             // });
           }
         });
-        res.redirect("/review");
+        // res.redirect("/review");
       }
   //handle input field
 });
