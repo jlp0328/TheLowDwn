@@ -5,6 +5,7 @@ var flash = require("connect-flash");
 var session = require("express-session");
 var passport = require("passport");
 var exphbs = require("express-handlebars");
+var request = require("request");
 
 var cheerio = require("cheerio");
 
@@ -143,7 +144,7 @@ app.get('/auth/facebook/callback',
 app.post("/dateScrape", function(req, res) {
   var result = {};
   var daterName = req.body.daterName;
-  result.daterName= daterName;
+  result.username= daterName;
   request("https://www.okcupid.com/profile/" + daterName + "?cf=home_orbits,homepage_2015_tester_filters_feed", function(error, response, html) {
     var $ = cheerio.load(html);
     $(".userinfo2015").each(function (i, element) {
