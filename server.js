@@ -77,7 +77,7 @@ app.use(function(req, res, next){
 });
 
 app.use("/", routes);
-app.use("/local", local);
+app.use("/users", local);
 
 
 //Passport Initialization
@@ -113,6 +113,12 @@ app.listen(port, function() {
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
+
+// app.get("/register", function(req,res){
+
+//    res.render("register");
+
+// });
 
 app.get('/auth/facebook',
   passport.authenticate('facebook'));
