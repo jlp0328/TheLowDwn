@@ -43,6 +43,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.get("/search", function(req, res){
+  res.render("searchUsername");
+
+});
+
 //Express-Session
 app.use(session({
   secret: "secret",
