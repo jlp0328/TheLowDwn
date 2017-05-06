@@ -5,14 +5,15 @@
   "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -w",
-    "start": "nodemon server.js & webpack -w"
+    "build": "webpack -w"
   },
   "author": "Ahmed Haque",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
     "cheerio": "^0.22.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^1.3.2",
@@ -24,6 +25,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^2.4.1"
