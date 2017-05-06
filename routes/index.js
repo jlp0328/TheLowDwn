@@ -8,8 +8,13 @@ router.get("/", function(req, res){
 
 });
 
-router.get("/search", function(req, res){
+router.get("/myAccount/search", function(req, res){
   res.render("searchUsername");
+
+});
+
+router.get("/myAccount/read", function(req, res){
+  res.render("searchExistingReviews");
 
 });
 

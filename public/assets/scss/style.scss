@@ -1,4 +1,5 @@
 @import "mixins";
+@import "buttons";
 
 $title-font: 'Monoton', cursive;
 // $button-color: #42b6b2;
@@ -77,6 +78,11 @@ $font-color-2: #f86762;
    @include button-variant(white, $button-color, white);
   position: fixed;
   bottom: 50px;
+}
+
+.searchResults {
+  color: $font-color-2;
+
 }
 
 .footer{
