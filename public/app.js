@@ -1,7 +1,7 @@
 //findDaterButton will id of button to search for dater on Okcupid
-$(document.on("click", "#findDaterButton"), function(e) {
+$(document.on("click", ".findDater"), function(e) {
 	e.preventDefault();
-	var daterName = $(".searchDater").val();
+	var daterName = $("#writeReviewSearch").val();
 	//need to see if we will have a data-id
 	var thisId = $(this).attr("data-id");
 
@@ -13,7 +13,7 @@ $(document.on("click", "#findDaterButton"), function(e) {
 		}
 	}).done(function(data) {
 		//clear input field for dater
-		$(".searchDater").val("");
+		$("#writeReviewSearch").val("");
 		//empty div on frontend, need div on frontend with emptiness but a card class
 		$("#daterDiv").empty();
 		var html = "<h3 class='card-title' id='daterName'>" + data.daterName + "</h3>" +
