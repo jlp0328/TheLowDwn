@@ -28,15 +28,6 @@
 .btn:focus, .btn:active:focus, .btn.active:focus {
   outline: 0 none; }
 
-.navbar {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 18px;
-  background-color: #f86762; }
-
-.navbar-brand {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 24px; }
-
 .appName {
   font-family: "Monoton", cursive;
   font-size: 90px;
@@ -147,6 +138,15 @@
   .newUserButton .badge {
     color: #1464F4;
     background-color: white; }
+
+.navbar {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: #f86762; }
+
+.navbar-brand {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 24px; }
 
 .searchResults {
   color: #f86762; }
