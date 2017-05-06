@@ -1,5 +1,5 @@
 //findDaterButton will id of button to search for dater on Okcupid
-$(document.on("click", "#findDaterButton"), function(e) {
+$(document).on("click", "#findDaterButton"), function(e) {
 	e.preventDefault();
 	var daterName = $(this).text(".searchDater");
 	//need to see if we will have a data-id

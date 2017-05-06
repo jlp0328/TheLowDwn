@@ -1,0 +1,56 @@
+
+.appName{
+  @include titlePageName;
+  color: $title-font-color;
+  bottom: 150px;
+}
+
+.appNameTwo{
+  @include titlePageName;
+    color: darken($title-font-color, 100%);
+    // color: lighten($button-color, 100%);
+    bottom: 200px
+}
+
+.appNameThree{
+  @include titlePageName;
+  color: darken($title-font-color, 80%);
+  // color: lighten($button-color, 80%);
+  bottom: 250px;
+}
+
+.appNameFour{
+  @include titlePageName;
+  color: darken($title-font-color, 60%);
+  // color: lighten($button-color, 60%);
+  bottom: 300px;
+}
+
+.appNameFive{
+  @include titlePageName;
+  color: darken($title-font-color, 40%);
+  // color: lighten($button-color, 40%);
+  bottom: 350px;
+}
+
+.landingPage{
+  // background-color: $background-color;
+  // height: 100vh;
+}
+
+.loginButton{
+  // @include buttonStyle;
+  // Buttons
+  @include button-variant(white, $button-color, white);
+  @include button-size(15px, 15px, 18px, 40px, 4px);
+  position: fixed;
+  bottom: 50px;
+  left: 300px;
+}
+
+.newUserButton{
+  @include button-size(15px, 15px, 18px, 4px, 4px);
+  @include button-variant(white, $button-color, white);
+  position: fixed;
+  bottom: 50px;
+}
