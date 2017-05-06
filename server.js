@@ -5,7 +5,11 @@ var flash = require("connect-flash");
 var session = require("express-session");
 var passport = require("passport");
 var exphbs = require("express-handlebars");
+
+var cheerio = require("cheerio");
+
 var path = require("path");
+
 
 var mongoose = require("mongoose");
 
@@ -127,3 +131,46 @@ app.get('/auth/facebook/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
+
+
+
+//Scraping OkCupid based on daters username
+app.post("/dateScrape", function(req, res) {
+  var result = {};
+  request("https://www.okcupid.com/profile/" + daterName + "?cf=home_orbits,homepage_2015_tester_filters_feed", function(error, response, html) {
+    var $ = cheerio.load(html);
+    $(".userinfo2015").each(function (i, element) {
+      //may need to add class of active somehow
+      result.image= $(element).find("img.active").attr("src");
+      result.age= $(element).find(".userinfo2015-basics-asl-age").text();
+      result.location= $(element),find(".userinfo2015-basics-asl-location").text();
+      // result.username= $(element).find(".userinfo2015-basics-username").text();
+    })
+  });//end of scrape request
+      if (result.image === null) {
+        //have page tell user no dater exists
+      }
+      //May want to see if dater already in DB? would need to do a see a findOne or somethign?
+      else {
+        //req.body here? how to handle rest of input then?
+        var entry = new Dater(result);
+        entry.save(function(err, doc) {
+          if (err) {
+            console.log(err);
+          }
+          else {
+            //Not SURE IF NEED THIS SINCE WANT TO SET IT FIRST TIME
+            // Dater.where({ "_id": req.params.id }.update({ $set: { image: result.image}}).exec(function(error, doc) {
+            //   if (error) {
+            //     console.log(error);
+            //   }
+            //   else {
+            //     res.send(doc);
+            //   }
+            // });
+          }
+        });
+        res.redirect("/review");
+      }
+  //handle input field
+});
