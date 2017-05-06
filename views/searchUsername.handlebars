@@ -7,30 +7,30 @@
     <input type="text" class="form-control" id="writeReviewSearch" placeholder="OkCupid Username" style="width: 350px">
   </div>
 
-  <button type="button" class="btn btn-primary btn-lg outline">Find User to Review</button>
+  <button type="button" class="btn btn-primary btn-lg outline findDater">Find User to Review</button>
 
 </form>
 
 </fieldset>
 </form>
 
-    {{#each dater}}
+    {{!-- {{#each dater}} --}}
 
     <div class="container" style="margin-top: 100px">
      <h1 style="text-align: center" class="searchResults">Search Results</h1>
 
-        <div class="card col-md-6" style="padding: 30px; text-align: center">
+        <div class="card col-md-6" id="daterDiv" style="padding: 30px; text-align: center">
 
-            <img class="card-img-top" src="{{this.image}}">
+           {{!--  <img class="card-img-top" src="{{this.image}}">
               <div class="card-block">
               <p style="font-size: 15px" class="card-title">{{this.username}}</p>
               <p style="font-size: 15px" class="card-title">{{this.location}}</p>
               <p style="font-size: 15px" class="card-title">{{this.age}}</p>
 
               <a data-id="{{this._id}}" class="btn btn-primary">Write Review!</a>
-              </div>
+              </div> --}}
 
         </div>
         </div>
 
-    {{/each}}
+    {{!-- {{/each}} --}}
