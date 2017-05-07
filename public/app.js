@@ -4,7 +4,7 @@ $(document).on("click", ".findDater", function(e) {
 	e.preventDefault();
 
 	var daterName = $("#writeReviewSearch").val().trim();
-	console.log(daterName);
+	console.log("input: " + daterName);
 	//need to see if we will have a data-id
 	var thisId = $(this).attr("data-id");
 
@@ -22,7 +22,7 @@ $(document).on("click", ".findDater", function(e) {
 		var html = "<h3 class='card-title' id='daterName'>" + data.username + "</h3>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
 			      "<h4 id='daterLocation'>" + data.location + "</h4>" +
-			      "<h4 id='daterAge'>" + data.age + "</h4>";
+			      "<h4 id='daterAge'>" + data.age + "</h4>" + "<h4>Is this who you were looking for?</h4>" + "<a class=btn btn-primary href='/myAccount/review'>" + "Yes?" + "</a>" + "<a class=btn btn-primary href='/myAccount/search'>" + "No?" + "</a>";
 
 		$("#daterDiv").append(html);
  		});
