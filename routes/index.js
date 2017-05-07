@@ -26,4 +26,9 @@ router.get("/myAccount", function(req, res){
   res.render("homepageAndReviews");
 });
 
+//added to test, sorry if i messed it up
+router.get("/myAccount/review", function(req, res){
+  res.render("review");
+});
+
 module.exports = router;
