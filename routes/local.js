@@ -63,15 +63,40 @@ router.post("/register", function(req, res){
 
 });
 
-// app.post("/login",
-//   passport.authenticate('local',
-//     {
-//       successRedirect: "/",
-//       failureRedirect: "/users/login",
-//       function(req, res) {
-//         res.redirect("/");
-//       }
+passport.use(new LocalStrategy(
+  function(username, password, done) {
 
-//     });
+    User.getUserByUsername(username, function(err, user){
+      if (err) throw error;
+      if(!user){
+        return done(null, false, {message: "Unknown User"});
+      }
+
+      User.comparePassword(password, user.password, function(err, isMatch){
+      if (err) throw error;
+      if(isMatch){
+          return done(null, user);
+
+      } else {
+        return done(null, false, {message: "Invalid password."} )
+      }
+
+      })
+
+    });
+
+  }));
+
+app.post("/login",
+  passport.authenticate('local',
+    {
+      successRedirect: "/myAccount",
+      failureRedirect: "/users/login",
+      failureFLash: true
+      function(req, res) {
+        res.redirect("/");
+      }
+
+    });
 
 module.exports = router;
