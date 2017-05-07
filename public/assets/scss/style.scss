@@ -2,6 +2,8 @@
 @import "buttons";
 @import "variables";
 @import "frontpage";
+@import "homepageAndMyReviews";
+@import "registration";
 
 body{
   font-family: $body-font;
@@ -10,7 +12,8 @@ body{
 .navbar{
   font-family: $body-font;
   font-size: 18px;
-  background-color: $font-color-2;
+  background-color: $okcupid-teal;
+  border-color: $okcupid-teal;
 }
 
 .navbar-brand {
@@ -21,11 +24,26 @@ body{
 
 
 .searchResults {
-  color: $font-color-2;
+  color: $okcupid-blue;
 
 }
 
-.footer{
-  position: fixed;
+.footer {
+  position: relative;
+  right: 0;
   bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
 }
+
+
+.title {
+  color: $okcupid-blue;
+}
+
+h1 {
+  color: $purple;
+}
+
+

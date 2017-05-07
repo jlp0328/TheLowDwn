@@ -1,3 +1,5 @@
+@import "variables";
+
 /***********************
   OUTLINE BUTTONS
 ************************/
@@ -8,13 +10,14 @@
 }
 
 .btn-primary.outline {
-    border: 2px solid #0099cc;
-    color: #0099cc;
+    border: 2px solid;
+    border-color: $okcupid-blue;
+    color: $okcupid-blue;
 }
 
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
-    color: #33a6cc;
-    border-color: #33a6cc;
+    border-color: $okcupid-blue;
+    color: $okcupid-blue;
 }
 
 .btn-primary.outline:active, .btn-primary.outline.active {

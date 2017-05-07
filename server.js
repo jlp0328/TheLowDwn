@@ -150,16 +150,20 @@ app.post("/dateScrape", function(req, res) {
   console.log(daterName);
 
   request("https://www.okcupid.com/profile/" + daterName + "?cf=profile_quickview", function(error, response, html) {
+
     var $ = cheerio.load(html);
 
-    $(".userinfo2015").each(function (i, element) {
+    $("div.userinfo2015").each(function (i, element) {
       //may need to add class of active somehow
-      result.image= $(this).find("img").attr("src");
+      result.image= $(this).find("div.userinfo2015-thumb").find("img.active").attr("src");
       result.age= $(this).find(".userinfo2015-basics-asl-age").text();
       result.location= $(this).find(".userinfo2015-basics-asl-location").text();
+      console.log(result);
       // result.username= $(element).find(".userinfo2015-basics-username").text();
     })
   });//end of scrape request
+
+
       if (result.image === null) {
         //have page tell user no dater exists
       }

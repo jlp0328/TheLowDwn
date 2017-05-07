@@ -1,51 +1,34 @@
 
-.appName{
-  @include titlePageName;
+.appNameRP{
+  @include registrationPageName;
   color: $purple;
   bottom: 150px;
 }
 
-.appNameTwo{
-  @include titlePageName;
+.appNameTwoRP{
+  @include registrationPageName;
     color: darken($purple, 80%);
     // color: lighten($button-color, 100%);
     bottom: 200px
 }
 
-.appNameThree{
-  @include titlePageName;
+.appNameThreeRP{
+  @include registrationPageName;
   color: darken($purple, 70%);
   // color: lighten($button-color, 80%);
   bottom: 250px;
 }
 
-.appNameFour{
-  @include titlePageName;
+.appNameFourRP{
+  @include registrationPageName;
   color: darken($purple, 60%);
   // color: lighten($button-color, 60%);
   bottom: 300px;
 }
 
-.appNameFive{
-  @include titlePageName;
+.appNameFiveRP{
+  @include registrationPageName;
   color: darken($purple, 50%);
   // color: lighten($button-color, 40%);
   bottom: 350px;
-}
-
-// .landingPage{
-//   background-color: $background-color;
-//   height: 100vh;
-// }
-
-.loginButton{
-  position: fixed;
-  bottom: 90px;
-}
-
-.newUserButton{
-  position: fixed;
-  bottom: 90px;
-  left: 220px;
-
 }
