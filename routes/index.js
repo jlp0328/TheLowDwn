@@ -12,7 +12,7 @@ router.get("/myAccount/search", function(req, res){
 });
 
 //Answer questions about dater
-router.get("/myAccount/review" function(req, res){
+router.get("/myAccount/review", function(req, res){
   res.render("writeReview");
 });
 
