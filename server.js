@@ -89,7 +89,7 @@ app.use(function(req, res, next){
 });
 
 app.use("/", routes);
-app.use("/users", local);
+app.use("/local", local);
 
 require("./routes/html-routes.js")(app);
 
@@ -166,14 +166,14 @@ app.post("/dateScrape", function(req, res) {
   });//end of scrape request
 
   //dater going into the database.
-  function daterBase() { 
+  function daterBase() {
 
       if (result.image === null) {
         console.log("test");
         //have page tell user no dater exists
         // res.render("<h3>User Not Found</h3>");
       }
-      
+
       else {
         // console.log("full result" + result);
         var entry = new Dater(result);
@@ -188,9 +188,10 @@ app.post("/dateScrape", function(req, res) {
                     }
         });
         // res.redirect("/review");
-      }//end of else 
+      }//end of else
     };
 });
+
 
 //post to make review, will need some tweaking
 // app.post("/review", function(req, res) {
@@ -211,5 +212,4 @@ app.post("/dateScrape", function(req, res) {
 //     }
 //   });
 // });
-
 
