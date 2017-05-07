@@ -175,8 +175,7 @@ app.post("/dateScrape", function(req, res) {
       }
 
       else {
-        console.log("full result" + result);
-        //req.body here? how to handle rest of input then?
+        // console.log("full result" + result);
         var entry = new Dater(result);
 
         entry.save(function(err, doc) {
@@ -193,21 +192,24 @@ app.post("/dateScrape", function(req, res) {
     };
 });
 
-app.post("/review", function(req, res) {
-  var newReview = new Review(req.body);
-  newReview.save(function(error, doc) {
-    if (error) {
-      console.log(error);
-    }
-    else {
-      Dater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
-          if (error) {
-            console.log(error);
-          }
-          else {
-            res.send(doc);
-          }
-        });
-    }
-  });
-});
+
+//post to make review, will need some tweaking
+// app.post("/review", function(req, res) {
+//   var newReview = new Review(req.body);
+//   newReview.save(function(error, doc) {
+//     if (error) {
+//       console.log(error);
+//     }
+//     else {
+//       Dater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
+//           if (error) {
+//             console.log(error); 
+//           }
+//           else {
+//             res.send(doc);
+//           }
+//         });
+//     }
+//   });
+// });
+
