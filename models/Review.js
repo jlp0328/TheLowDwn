@@ -13,14 +13,13 @@ var ReviewSchema = new Schema ({
 		required: false
 	},
 	questionTwo: {
-		type: Integer,
+		type: String,
 		required: false
 	},
 	questionThree: {
 		type: String,
-		required: true
+		required: false
 	}
-	//not sure would reference any other table...
 });
 
 var Review = mongoose.model("Review", ReviewSchema);

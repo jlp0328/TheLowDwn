@@ -24,6 +24,7 @@ mongoose.Promise = Promise;
 // Require History Schema
 var Dater = require("./models/Dater");
 var User = require("./models/User");
+var Review = require("./models/Review");
 
 var routes = require("./routes/index");
 var local = require("./routes/local");
@@ -158,7 +159,7 @@ app.post("/dateScrape", function(req, res) {
       result.image= $(this).find("div.userinfo2015-thumb").find("img.active").attr("src");
       result.age= $(this).find(".userinfo2015-basics-asl-age").text();
       result.location= $(this).find(".userinfo2015-basics-asl-location").text();
-      console.log(result);
+      console.log("result after scrape: " + result);
       // result.username= $(element).find(".userinfo2015-basics-username").text();
     })
     daterBase();
@@ -190,4 +191,23 @@ app.post("/dateScrape", function(req, res) {
         // res.redirect("/review");
       }//end of else 
     };
+});
+
+app.post("/review", function(req, res) {
+  var newReview = new Review(req.body);
+  newReview.save(function(error, doc) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      Dater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
+          if (error) {
+            console.log(error); 
+          }
+          else {
+            res.send(doc);
+          }
+        });
+    }
+  });
 });
