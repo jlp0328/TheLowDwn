@@ -22,8 +22,8 @@ router.get("/myAccount/blog", function(req, res){
 });
 
 //Read your saved dater reviews
-router.get("/myAccount/saved", function(req, res){
-  res.render("mySavedReviews");
+router.get("/myAccount", function(req, res){
+  res.render("homepageAndReviews");
 });
 
 module.exports = router;

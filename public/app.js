@@ -1,3 +1,11 @@
+
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+});
+
+
+
 //findDaterButton will id of button to search for dater on Okcupid
 $(document).on("click", ".findDater", function(e) {
 

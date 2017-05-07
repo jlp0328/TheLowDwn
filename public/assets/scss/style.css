@@ -6,12 +6,13 @@
   padding: 12px 22px; }
 
 .btn-primary.outline {
-  border: 2px solid #0099cc;
-  color: #0099cc; }
+  border: 2px solid;
+  border-color: #084AA4;
+  color: #084AA4; }
 
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
-  color: #33a6cc;
-  border-color: #33a6cc; }
+  border-color: #084AA4;
+  color: #084AA4; }
 
 .btn-primary.outline:active, .btn-primary.outline.active {
   border-color: #007299;
@@ -33,7 +34,7 @@
   font-size: 90px;
   position: fixed;
   text-align: center;
-  color: #f86762;
+  color: #ae029b;
   bottom: 150px; }
 
 .appNameTwo {
@@ -57,7 +58,7 @@
   font-size: 90px;
   position: fixed;
   text-align: center;
-  color: #260302;
+  color: black;
   bottom: 300px; }
 
 .appNameFive {
@@ -65,79 +66,63 @@
   font-size: 90px;
   position: fixed;
   text-align: center;
-  color: #880a06;
+  color: black;
   bottom: 350px; }
 
 .loginButton {
-  color: white;
-  background-color: #1464F4;
-  border-color: white;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 40px;
-  border-radius: 4px;
   position: fixed;
-  bottom: 50px;
-  left: 300px; }
-  .loginButton:focus, .loginButton.focus {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #bfbfbf; }
-  .loginButton:hover {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #e0e0e0; }
-  .loginButton:active, .loginButton.active, .open > .loginButton.dropdown-toggle {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #e0e0e0; }
-    .loginButton:active:hover, .loginButton:active:focus, .loginButton:active.focus, .loginButton.active:hover, .loginButton.active:focus, .loginButton.active.focus, .open > .loginButton.dropdown-toggle:hover, .open > .loginButton.dropdown-toggle:focus, .open > .loginButton.dropdown-toggle.focus {
-      color: white;
-      background-color: #0842a9;
-      border-color: #bfbfbf; }
-  .loginButton:active, .loginButton.active, .open > .loginButton.dropdown-toggle {
-    background-image: none; }
-  .loginButton.disabled:hover, .loginButton.disabled:focus, .loginButton.disabled.focus, .loginButton[disabled]:hover, .loginButton[disabled]:focus, .loginButton[disabled].focus, fieldset[disabled] .loginButton:hover, fieldset[disabled] .loginButton:focus, fieldset[disabled] .loginButton.focus {
-    background-color: #1464F4;
-    border-color: white; }
-  .loginButton .badge {
-    color: #1464F4;
-    background-color: white; }
+  bottom: 90px; }
 
 .newUserButton {
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 4px;
-  border-radius: 4px;
-  color: white;
-  background-color: #1464F4;
-  border-color: white;
   position: fixed;
-  bottom: 50px; }
-  .newUserButton:focus, .newUserButton.focus {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #bfbfbf; }
-  .newUserButton:hover {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #e0e0e0; }
-  .newUserButton:active, .newUserButton.active, .open > .newUserButton.dropdown-toggle {
-    color: white;
-    background-color: #0a4fcb;
-    border-color: #e0e0e0; }
-    .newUserButton:active:hover, .newUserButton:active:focus, .newUserButton:active.focus, .newUserButton.active:hover, .newUserButton.active:focus, .newUserButton.active.focus, .open > .newUserButton.dropdown-toggle:hover, .open > .newUserButton.dropdown-toggle:focus, .open > .newUserButton.dropdown-toggle.focus {
-      color: white;
-      background-color: #0842a9;
-      border-color: #bfbfbf; }
-  .newUserButton:active, .newUserButton.active, .open > .newUserButton.dropdown-toggle {
-    background-image: none; }
-  .newUserButton.disabled:hover, .newUserButton.disabled:focus, .newUserButton.disabled.focus, .newUserButton[disabled]:hover, .newUserButton[disabled]:focus, .newUserButton[disabled].focus, fieldset[disabled] .newUserButton:hover, fieldset[disabled] .newUserButton:focus, fieldset[disabled] .newUserButton.focus {
-    background-color: #1464F4;
-    border-color: white; }
-  .newUserButton .badge {
-    color: #1464F4;
-    background-color: white; }
+  bottom: 90px;
+  left: 220px; }
+
+.useCases {
+  font-size: 20px; }
+
+.useCases-ul {
+  font-size: 24px; }
+
+.appNameRP {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: fixed;
+  text-align: center;
+  color: #ae029b;
+  bottom: 150px; }
+
+.appNameTwoRP {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: fixed;
+  text-align: center;
+  color: black;
+  bottom: 200px; }
+
+.appNameThreeRP {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: fixed;
+  text-align: center;
+  color: black;
+  bottom: 250px; }
+
+.appNameFourRP {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: fixed;
+  text-align: center;
+  color: black;
+  bottom: 300px; }
+
+.appNameFiveRP {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: fixed;
+  text-align: center;
+  color: black;
+  bottom: 350px; }
 
 body {
   font-family: "Open Sans Condensed", sans-serif; }
@@ -145,17 +130,28 @@ body {
 .navbar {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 18px;
-  background-color: #f86762; }
+  background-color: #4FC5D0;
+  border-color: #4FC5D0; }
 
 .navbar-brand {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 24px; }
 
 .searchResults {
-  color: #f86762; }
+  color: #084AA4; }
 
 .footer {
-  position: fixed;
-  bottom: 0; }
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center; }
+
+.title {
+  color: #084AA4; }
+
+h1 {
+  color: #ae029b; }
 
 /*# sourceMappingURL=style.css.map */
