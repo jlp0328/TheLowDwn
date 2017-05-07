@@ -11,6 +11,11 @@ router.get("/myAccount/search", function(req, res){
   res.render("searchUsername");
 });
 
+//Answer questions about dater
+router.get("/myAccount/review", function(req, res){
+  res.render("writeReview");
+});
+
 //Search for a user in the db to read their reviews
 router.get("/myAccount/read", function(req, res){
   res.render("searchExistingReviews");
