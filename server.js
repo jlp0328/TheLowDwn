@@ -147,7 +147,7 @@ app.post("/dateScrape", function(req, res) {
   var daterName = req.body.username;
 
   result.username = daterName;
-  console.log(daterName);
+  console.log("scrape: " + daterName);
 
   request("https://www.okcupid.com/profile/" + daterName + "?cf=profile_quickview", function(error, response, html) {
 
@@ -161,14 +161,20 @@ app.post("/dateScrape", function(req, res) {
       console.log(result);
       // result.username= $(element).find(".userinfo2015-basics-username").text();
     })
+    daterBase();
   });//end of scrape request
 
+  //dater going into the database.
+  function daterBase() { 
 
       if (result.image === null) {
+        console.log("test");
         //have page tell user no dater exists
+        // res.render("<h3>User Not Found</h3>");
       }
-      //May want to see if dater already in DB? would need to do a see a findOne or somethign?
+      
       else {
+        console.log("full result" + result);
         //req.body here? how to handle rest of input then?
         var entry = new Dater(result);
 
@@ -179,18 +185,9 @@ app.post("/dateScrape", function(req, res) {
           }
           else {
             res.send(doc);
-            //Not SURE IF NEED THIS SINCE WANT TO SET IT FIRST TIME
-            // Dater.where({ "_id": req.params.id }.update({ $set: { image: result.image}}).exec(function(error, doc) {
-            //   if (error) {
-            //     console.log(error);
-            //   }
-            //   else {
-            //     res.send(doc);
-            //   }
-            // });
-          }
+                    }
         });
         // res.redirect("/review");
-      }
-  //handle input field
+      }//end of else 
+    };
 });
