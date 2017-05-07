@@ -27,6 +27,9 @@ router.post("/register", function(req, res){
     var password = req.body.password;
     var confirmPassword = req.body.confirm;
 
+    console.log(name);
+    console.log(password);
+
     //validation
 
     req.checkBody("name", "Name is required.").notEmpty();
@@ -39,7 +42,7 @@ router.post("/register", function(req, res){
     var errors = req.validationErrors();
 
     if(errors){
-      res.render("/register", {
+      res.render("register", {
         errors: errors
       });
 
@@ -51,6 +54,8 @@ router.post("/register", function(req, res){
           password: password
         });
 
+        console.log(newUser);
+
         User.createUser(newUser, function (err, user){
             if(err) throw err;
             console.log(user);
@@ -58,7 +63,7 @@ router.post("/register", function(req, res){
         });
 
         req.flash("success_msg", "You are registered and can now log-in!");
-        res.redirect("/");
+        res.redirect("/myAccount");
     }
 
 });
@@ -87,16 +92,28 @@ passport.use(new LocalStrategy(
 
   }));
 
-app.post("/login",
-  passport.authenticate('local',
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.getUserByID(id, function(err, user) {
+    done(err, user);
+  });
+});
+
+
+router.post("/login", passport.authenticate ('local',
     {
       successRedirect: "/myAccount",
-      failureRedirect: "/users/login",
-      failureFLash: true
+      failureRedirect: "/login",
+      failureFLash: true,
       function(req, res) {
         res.redirect("/");
       }
 
-    });
+    }
+
+    ) );
 
 module.exports = router;

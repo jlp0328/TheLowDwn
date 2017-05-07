@@ -34,6 +34,7 @@ var UserSchema = new Schema({
 
 // Create the Article model with the ArticleSchema
 var User = mongoose.model("User", UserSchema);
+module.exports = User;
 
 // Export the model
 // module.exports = User;
@@ -53,10 +54,21 @@ module.exports.getUserByUsername = function (username, callback){
       var query = {username: username};
 
       User.findOne(query, callback);
+}
 
+
+module.exports.getUserByID = function (id, callback){
+
+      User.findById(id, callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback ){
+
+      bcrypt.compare(candidatePassword, hash, function(err, res) {
+
+      if (err) throw err;
+      callback(null, isMatch);
+});
 
 
 }
