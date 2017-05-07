@@ -63,7 +63,7 @@ router.post("/register", function(req, res){
         });
 
         req.flash("success_msg", "You are registered and can now log-in!");
-        res.redirect("/myAccount");
+        res.redirect("/login");
     }
 
 });
@@ -103,10 +103,10 @@ passport.deserializeUser(function(id, done) {
 });
 
 
-router.post("/login", passport.authenticate ('local',
+router.post("/login", passport.authenticate ("local",
     {
       successRedirect: "/myAccount",
-      failureRedirect: "/login",
+      failureRedirect: "/local/login",
       failureFLash: true,
       function(req, res) {
         res.redirect("/");
