@@ -191,8 +191,8 @@ app.post("/dateScrape", function(req, res) {
       }//end of else
     };
 });
-
-
+////////////
+////////////////
 //post to make review, will need some tweaking
 // app.post("/review", function(req, res) {
 //   var newReview = new Review(req.body);
@@ -212,4 +212,35 @@ app.post("/dateScrape", function(req, res) {
 //     }
 //   });
 // });
+/////////////
+///////////////
+//get reviews on a dater
+//not sure if the Review: doc will work. not sure how doc will come out, in news one we had it go to another route but this one we will be showing results to same page..maybe can use handlebars to handle this doc.
+//Need to see about if user not in db, tell user either check spelling or no reviews made yet..
 
+// app.post("/read", function(req, res) {
+//   var daterName = req.body.username;
+//   Review.find({ username: daterName }).exec(function(error, doc) {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       res.render("searchExistingReviews", { Review: doc });
+//     }
+//   });
+
+// });
+//////////
+///////////
+//get reviews for user signed in...url router may not be correct
+//may also need to figure out how to make sure user id is available in this req.params. this will be user id of actual person signed in
+
+// app.get("/myAccount", function(req, res) {
+//   Review.find({"_id": req.params.id}).sort({$natural:-1}).exec(function(error, doc) {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       res.render("homepageAndReviews", {Review: doc}):
+//     }
+//   });
+
+// });
