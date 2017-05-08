@@ -1,10 +1,11 @@
 var express = require("express");
 var router = express.Router();
+var path = require("path");
 
 var LocalStrategy = require("passport-local").Strategy;
 var passport = require("passport");
 
-var User = require("../models/User")
+var User = require("../models/User");
 
 
 //Register
@@ -111,12 +112,15 @@ passport.deserializeUser(function(id, done) {
 
 router.post("/login", passport.authenticate ("local",
     {
-      successRedirect: "/myAccount",
+
       failureRedirect: "/local/login",
       failureFLash: true}),
 
       function(req, res) {
-        res.redirect("/myAccount");
+
+        // var username = req.params.username;
+
+        res.redirect("/" + req.user.username);
       }
 
 

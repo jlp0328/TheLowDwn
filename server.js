@@ -122,9 +122,9 @@ app.listen(port, function() {
 
 
 //Route to root and connect index.html
-// app.get("/", function(req, res) {
-//   res.sendFile(__dirname + "/public/index.html");
-// });
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 // app.get('/auth/facebook',
 //   passport.authenticate('facebook'));
