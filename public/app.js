@@ -29,10 +29,10 @@ $(document).on("click", ".findDater", function(e) {
 		var html = "<h3 class='card-title' id='daterName'>" + data.username + "</h3>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
 			      "<h4 id='daterLocation'>" + data.location + "</h4>" +
-			      "<h4 id='daterAge'>" + data.age + "</h4>" + 
-			      "<h4>Is this who you were looking for?</h4>" + 
-			      "<a class=btn btn-primary id='yesDater' data-id=" + data.username +">" + "Yes?" + "</a>" + 
-			      "<a class=btn btn-primary href='/myAccount/search'>" + "No?" + "</a>";
+			      "<h4 id='daterAge'>" + data.age + "</h4>" + "<div class='yesOrNo' style='display:show'>" +
+			      "<h4>Is this who you were looking for?</h4>" +
+			      "<a class=btn btn-primary id='yesDater' data-id=" + data.username +">" + "Yes?" + "</a>" +
+			      "<a class=btn btn-primary href='/myAccount/search'>" + "No?" + "</a>" + "</div>";
 			      //href for clicking yes to go to questions: href='/myAccount/review'
 			      // "<a class=btn btn-primary id='yesDater' href='/myAccount/review/:" + data.username + "'data-id=" + data.username +">" + "Yes?" + "</a>"
 			      //"data-id=" + data.username +
@@ -41,10 +41,8 @@ $(document).on("click", ".findDater", function(e) {
  		});
 
 });
-/////////////////////
-///////////////
-//user selecting dater to make review on use this when hit submit 
 
+//user selecting dater to make review on use this when hit submit
 // $(document).on("click", "#yesDater", function(e) {
 // 	e.preventDefault();
 
@@ -86,13 +84,16 @@ $(document).on("click", ".findDater", function(e) {
 
 //click yes button and display questions
 $(document).on("click", "#yesDater", function(e) {
-	
+
 	$(".reviewDate").show();
+	$(".searchField").hide();
+	$(".yesOrNo").hide();
+
 });
 
 
 //click on the never met checkbox and displays question of who initiated convo
-$(document).on("click", "#neverMet", function(e) {	
+$(document).on("click", "#neverMet", function(e) {
 	$("#secondQuestion").show();
 });
 
