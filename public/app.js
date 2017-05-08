@@ -1,9 +1,7 @@
 
-
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 });
-
 
 
 //findDaterButton will id of button to search for dater on Okcupid
@@ -14,7 +12,7 @@ $(document).on("click", ".findDater", function(e) {
 	var daterName = $("#writeReviewSearch").val().trim();
 	console.log("input: " + daterName);
 	//need to see if we will have a data-id
-	var thisId = $(this).attr("data-id");
+	// var thisId = $(this).attr("data-id");
 
 	$.ajax({
 		method: "POST",
@@ -43,6 +41,7 @@ $(document).on("click", ".findDater", function(e) {
  		});
 
 });
+
 //user selecting dater to make review on use this when hit submit
 // $(document).on("click", "#yesDater", function(e) {
 // 	e.preventDefault();
@@ -60,7 +59,28 @@ $(document).on("click", ".findDater", function(e) {
 // 		console.log(data);
 // 	});
 // });
+/////////////////////////
+///////////////
+//on click for searching for user to read reviews
 
+// $(document).on("click", ".findReview", function(e) {
+// 	e.preventDefault();
+
+// 	var daterName = ("#readReviewSearch").val().trim();
+
+// 	$.ajax({
+// 		method: "POST",
+// 		url: "/read",
+// 		data: {
+// 			username: daterName
+// 		}
+// 	}).done(function(data) {
+// 		$("#readReviewSearch").val("");
+// 		//do some stuff with the data maybe or see if handlebars can take care of it to render existing reviews
+// 	});
+// });
+/////////////////
+//////////
 
 //click yes button and display questions
 $(document).on("click", "#yesDater", function(e) {
@@ -76,5 +96,7 @@ $(document).on("click", "#yesDater", function(e) {
 $(document).on("click", "#neverMet", function(e) {
 	$("#secondQuestion").show();
 });
+
+
 
 
