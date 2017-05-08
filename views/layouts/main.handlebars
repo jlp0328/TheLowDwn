@@ -39,7 +39,7 @@
                   <li><a style="color: white" href="/myAccount/read">Read Reviews</a></li>
                   <li><a style="color: white" href="/myAccount/search">Write Reviews</a></li>
                   <li><a style="color: white" href="/myAccount/blog">Get The LowDwn.</a></li>
-                  {{!-- <li><a style="color: white" href="/myAccount/saved">My Reviews</a></li> --}}
+                  <li><a style="color: white" href="">Logout</a></li>
 
               </ul>
             </div><!--/.navbar-collapse -->
@@ -47,6 +47,18 @@
         </div>
 
 <div class="container">
+
+          {{#if success_msg}}
+            <div class="alert alert-success" style="margin-top: 65px">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger" style="margin-top: 65px">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger" style="margin-top: 65px">{{error}}</div>
+          {{/if}}
 
 {{{body}}}
 
