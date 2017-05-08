@@ -63,30 +63,35 @@ router.post("/register", function(req, res){
         });
 
         req.flash("success_msg", "You are registered and can now log-in!");
-        res.redirect("/myAccount");
+        res.redirect("/local/login");
     }
 
 });
 
 passport.use(new LocalStrategy(
+
   function(username, password, done) {
 
     User.getUserByUsername(username, function(err, user){
+
       if (err) throw error;
       if(!user){
-        return done(null, false, {message: "Unknown User"});
+        return done(null, false, {message: "Unknown user"});
       }
 
       User.comparePassword(password, user.password, function(err, isMatch){
+
       if (err) throw error;
       if(isMatch){
+
           return done(null, user);
 
       } else {
+
         return done(null, false, {message: "Invalid password."} )
       }
 
-      })
+      });
 
     });
 
@@ -97,23 +102,24 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.getUserByID(id, function(err, user) {
+
+  User.getUserById(id, function(err, user) {
     done(err, user);
   });
 });
 
 
-router.post("/login", passport.authenticate ('local',
+router.post("/login", passport.authenticate ("local",
     {
       successRedirect: "/myAccount",
-      failureRedirect: "/login",
-      failureFLash: true,
+      failureRedirect: "/local/login",
+      failureFLash: true}),
+
       function(req, res) {
-        res.redirect("/");
+        res.redirect("/myAccount");
       }
 
-    }
 
-    ) );
+    );
 
 module.exports = router;

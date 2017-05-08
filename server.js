@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
 var expressValidator = require("express-validator");
 var flash = require("connect-flash");
 var session = require("express-session");
@@ -40,15 +41,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(cookieParser());
 
 //Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get("/search", function(req, res){
-  res.render("searchUsername");
+// app.get("/search", function(req, res){
+//   res.render("searchUsername");
 
-});
+// });
 
 //Express-Session
 app.use(session({
@@ -57,6 +59,10 @@ app.use(session({
   resave: true
 
   }));
+
+//Passport Initialization
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Express-Validator
 app.use(expressValidator({
@@ -84,6 +90,7 @@ app.use(function(req, res, next){
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
+  res.locals.user = req.user || null;
   next();
 
 });
@@ -92,16 +99,6 @@ app.use("/", routes);
 app.use("/local", local);
 
 require("./routes/html-routes.js")(app);
-
-
-
-//Passport Initialization
-app.use(passport.initialize());
-
-app.use(passport.session());
-
-
-
 
 
 mongoose.connect("mongodb://localhost/thelowdwn");
@@ -129,15 +126,14 @@ app.listen(port, function() {
 //   res.sendFile(__dirname + "/public/index.html");
 // });
 
-app.get('/auth/facebook',
-  passport.authenticate('facebook'));
+// app.get('/auth/facebook',
+//   passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+// app.get('/auth/facebook/callback',
+//   passport.authenticate('facebook', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     res.redirect('/');
+//   });
 
 
 
@@ -203,7 +199,7 @@ app.post("/dateScrape", function(req, res) {
 //     else {
 //       Dater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
 //           if (error) {
-//             console.log(error); 
+//             console.log(error);
 //           }
 //           else {
 //             res.send(doc);
