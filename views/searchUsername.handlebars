@@ -15,6 +15,7 @@
 </form>
 
 </div>
+{{!-- Closing Search Box --}}
 
 
 {{!-- Hidden div with questions --}}
@@ -22,7 +23,7 @@
 
     <h1>Give Us The LowDwn.</h1>
 
-<form>
+    <form>
 
 {{!-- Question One --}}
     <div class="form-group">
@@ -42,6 +43,7 @@
             </div>
         </div>
     </div>
+    {{!-- Closing Q1 --}}
 
 {{!-- Question Two --}}
 {{!-- don't have a toggle because either way move to next question --}}
@@ -61,6 +63,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q2 --}}
 
 {{!-- Question Three --}}
         <div class="form-group row" id="inPerson" style="display: none">
@@ -78,6 +81,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q3 --}}
 
 {{!-- Question Four --}}
         <div class="form-group row" id="datingTimes" style="display: none">
@@ -95,6 +99,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q4 --}}
 
 {{!-- Question Four A --}}
                 <div class="form-group row" id="datingTimes_A" style="display: none">
@@ -112,6 +117,7 @@
                       </div>
                     </div>
                 </div>
+                {{!-- Closing Q4 A --}}
 
 {{!-- Question 4B --}}
                 <div class="form-group row" id="datingTimes_B" style="display: none">
@@ -129,6 +135,7 @@
                       </div>
                     </div>
                 </div>
+                {{!-- Closing Q4 B --}}
 
 {{!-- Question4B_1 --}}
          {{!-- no toggle --}}
@@ -164,6 +171,7 @@
                       </div>
                     </div>
                 </div>
+                {{!-- Closing Q4 C --}}
 
 {{!-- Question 5 --}}
   {{!-- thinking not to put a toggle on this one? --}}
@@ -181,6 +189,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q5 --}}
 
 {{!-- Question 6 --}}
 {{!-- no toggle --}}
@@ -199,6 +208,7 @@
               </div>
             </div>
         </div>
+        {{!-- Close Q6 --}}
 
 {{!-- Question 7 --}}
         <div class="form-group row" id="physical" style="display: none">
@@ -216,6 +226,7 @@
               </div>
             </div>
         </div>
+        {{!-- Close Q7 --}}
 
 {{!-- Question 8 --}}
         <div class="form-group row" id="appearance" style="display: none">
@@ -233,6 +244,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q8 --}}
 
 {{!-- Question 8A --}}
                 <div class="form-group row" id="appearance_A" style="display: none">
@@ -255,6 +267,7 @@
                       </div>
                     </div>
                 </div>
+                {{!-- Closing 8A --}}
 
 {{!-- Question 9 --}}
         <div class="form-group row" id="recommendFriend" style="display: none">
@@ -270,6 +283,7 @@
               </div>
             </div>
         </div>
+        {{!-- Closing Q9 --}}
 
 
 {{!-- Nice to knows --}}
@@ -283,23 +297,18 @@
                   <input class="form-check-input" type="checkbox"> Grabbed Food
                   <input class="form-check-input" type="checkbox"> Attended a Sporting Event/Concert
                   <input class="form-check-input" type="checkbox"> "Netflix and Chill"
-                  <input class="form-check-input" type="checkbox"> Hung out with their friends 
+                  <input class="form-check-input" type="checkbox"> Hung out with their friends
                   <input class="form-check-input" type="checkbox"> Hung out with their family
                 </label>
               </div>
             </div>
           </div>
-
-       
-</div>
+          {{!-- Nice to know closing --}}
 
 </form>
-  
-</div>
 
-
+    {{!-- Topics Discussed --}}
    <div class="form-group">
-
         <div class="form-group row">
           <label class="col-sm-2">What topics were discussed on your date?</label>
           <div class="col-sm-10">
@@ -324,7 +333,10 @@
             </label>
           </div>
   </div>
+  {{!-- Closing final question --}}
 
+</div>
+{{!-- Closing container with all questions --}}
 
 {{!-- Div with search results that will be appended via scrape --}}
 <div class="container col-md-6" style="margin-top: 65px">
