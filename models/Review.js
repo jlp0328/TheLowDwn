@@ -19,6 +19,39 @@ var ReviewSchema = new Schema ({
 	questionThree: {
 		type: String,
 		required: false
+	},
+	questionFour: {
+		type: String,
+		required: false
+	},
+	questionFive: {
+		type: String,
+		required: false
+	},
+	questionSix: {
+		type: String,
+		required: false
+	},
+	questionSeven: {
+		type: String,
+		required: false
+	},
+	questionEight: {
+		type: String,
+		required: false
+	},
+	questionNine: {
+		type: String,
+		required: false
+	},
+	questionTen: {
+		type: String,
+		required: false
+	},
+	score: {
+		type: String,
+		require: false
+		// will be calculated so may be required
 	}
 });
 
