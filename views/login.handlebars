@@ -1,6 +1,18 @@
-<!-- LOGIN FORM -->
-<div class="text-center" style="margin-top: 65px">
-  <div class="logo">Login</div>
+
+    <div class="container" style="margin-top: 65px">
+      <div class="row main col-md-6">
+        <div class="panel-heading" >
+                 <div class="panel-title text-center">
+                    <h1 class="title">Login</h1>
+                    <hr />
+                  </div>
+              </div>
+
+        {{#if errors}}
+          {{#each errors}}
+          <div class="alert alert-danger">{{msg}}</div>
+          {{/each}}
+        {{/if}}
 
   <!-- Main Form -->
   <div class="login-form-1">
@@ -20,11 +32,30 @@
         <button type="submit" class="btn btn-primary btn-lg outline" >Login</button>
 
       </div>
-{{!--       <div class="etc-login-form">
-        <p>forgot your password? <a href="#">click here</a></p>
-        <p>new user? <a href="#">create new account</a></p> --}}
+
       </div>
     </form>
   </div>
   <!-- end:Main Form -->
 </div>
+
+
+    <div class="container col-md-6">
+
+    <div>
+
+      <span class="appNameLogin animated fadeInUp" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameTwoLogin animated fadeOutUp" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameThreeLogin animated fadeOutUp" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameFourLogin animated fadeOutUp" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameFiveLogin animated fadeOutUp" style="margin-left: 25px">The LowDwn.</span>
+
+    </div>
+
+    </div>
+
+    </div>

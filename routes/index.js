@@ -40,13 +40,24 @@ router.get("/:username/blog", function(req, res){
 });
 
 //Read your saved dater reviews
-router.get("/:username", function(req, res){
+router.get("/:username", ensureAuthentication, function(req, res){
 
   var login = req.params.username;
 
      res.render("homepageAndReviews", {username: login});
 
   });
+
+function ensureAuthentication(req, res, next){
+    if(req.isAuthenticated()){
+      return next();
+    } else {
+
+        req.flash("error_msg", "You are not logged in.");
+        res.redirect("/local/login");
+    }
+
+}
 
 
 module.exports = router;

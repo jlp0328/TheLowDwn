@@ -110,11 +110,12 @@ passport.deserializeUser(function(id, done) {
 });
 
 
+
 router.post("/login", passport.authenticate ("local",
     {
 
       failureRedirect: "/local/login",
-      failureFLash: true}),
+      failureFlash: true}),
 
       function(req, res) {
 
@@ -125,5 +126,14 @@ router.post("/login", passport.authenticate ("local",
 
 
     );
+
+router.get("/logout", function(req, res){
+    req.logout();
+
+    req.flash("success_msg", "You are logged out!");
+
+    res.redirect("/local/login");
+
+});
 
 module.exports = router;
