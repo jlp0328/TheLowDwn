@@ -1,12 +1,13 @@
+@import "variables";
 
-.appNameRP{
+.appNameLogin{
   @include registrationPageName;
   color: $purple;
-  top: 300px;
+  top: 65px;
   left: 50px;
 }
 
-.appNameTwoRP{
+.appNameTwoLogin{
   @include registrationPageName;
     color: darken($purple, 80%);
     // color: lighten($button-color, 100%);
@@ -14,7 +15,7 @@
     left: 50px;
 }
 
-.appNameThreeRP{
+.appNameThreeLogin{
   @include registrationPageName;
   color: darken($purple, 70%);
   // color: lighten($button-color, 80%);
@@ -22,7 +23,7 @@
   left: 50px;
 }
 
-.appNameFourRP{
+.appNameFourLogin{
   @include registrationPageName;
   color: darken($purple, 60%);
   // color: lighten($button-color, 60%);
@@ -30,7 +31,7 @@
   left: 50px;
 }
 
-.appNameFiveRP{
+.appNameFiveLogin{
   @include registrationPageName;
   color: darken($purple, 50%);
   // color: lighten($button-color, 40%);
