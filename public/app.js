@@ -43,7 +43,7 @@ $(document).on("click", ".findDater", function(e) {
 });
 
 //user selecting dater to make review on use this when hit submit
-// $(document).on("click", "#yesDater", function(e) {
+// $(document).on("click", "#submit", function(e) {
 // 	e.preventDefault();
 
 // 	var daterName = $(this).attr("data-id");
@@ -90,7 +90,7 @@ $(document).on("click", "#yesDater", function(e) {
 	$(".yesOrNo").hide();
 
 });
-
+//On Click Events for Questions on Review
 //Q1: yes to go to show 2 
 $(document).on("click", "#talkYes", function(e) {
 	$("#initiate").show();
@@ -127,9 +127,9 @@ $(document).on("click", "#dateOnce", function(e) {
 	$("#datingTimes_A").show();
 });
 
-//Q4A: yes go to 5
+//Q4A: yes go to 6
 $(document).on("click", "#dateAgain", function(e) {
-	$("#dateNumber").show();
+	$("#attraction").show();
 });
 
 //Q4A: no go to 4B
