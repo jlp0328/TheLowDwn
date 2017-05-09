@@ -34,12 +34,13 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
 
-
-                  <li><a style="color: white" href="/myAccount">Home</a></li>
-                  <li><a style="color: white" href="/myAccount/read">Read Reviews</a></li>
-                  <li><a style="color: white" href="/myAccount/search">Write Reviews</a></li>
-                  <li><a style="color: white" href="/myAccount/blog">Get The LowDwn.</a></li>
-                  <li><a style="color: white" href="">Logout</a></li>
+                  {{#if user}}
+                  <li><a style="color: white" href="/:username">Home</a></li>
+                  <li><a style="color: white" href="/:username/read">Read Reviews</a></li>
+                  <li><a style="color: white" href="/:username/search">Write Reviews</a></li>
+                  <li><a style="color: white" href="/:username/blog">Get The LowDwn.</a></li>
+                  <li><a style="color: white" href="/local/logout">Logout</a></li>
+                  {{/if}}
 
               </ul>
             </div><!--/.navbar-collapse -->
