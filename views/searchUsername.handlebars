@@ -22,10 +22,257 @@
 
     <h1>Give Us The LowDwn.</h1>
 
-    <form>
+<form>
 
-        <div class="form-group">
+{{!-- Question One --}}
+    <div class="form-group">
+        <div class="form-group row" id="correspond">
+            <label class="col-sm-2">Did you correspond with this person?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="talkYes"> Yes
+                </label>
+                {{!-- have a trigger for this question to end it since --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="talkNo"> No, we've never messaged
+                </label>
+              </div>
+            </div>
+        </div>
+    </div>
 
+{{!-- Question Two --}}
+{{!-- don't have a toggle because either way move to next question --}}
+        <div class="form-group row" id="initiate" style="display: none">
+            <label class="col-sm-2">Did you initiate the intitial conversation?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+              {{!-- put a class on the buttons because it doesn't matter what answer is --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="initiated"> Yes
+                </label>
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="initiated"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question Three --}}
+        <div class="form-group row" id="inPerson" style="display: none">
+            <label class="col-sm-2">Did you meet in person?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="metYes"> Yes
+                </label>
+                {{!-- have a trigger for this question to end it since never met --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="neverMet"> No, we've never met
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question Four --}}
+        <div class="form-group row" id="datingTimes" style="display: none">
+            <label class="col-sm-2">Did you meet for more than one date?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="dateMultiple"> Yes
+                </label>
+              {{!-- trigger to sub questions --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="dateOnce"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question Four A --}}
+                <div class="form-group row" id="datingTimes_A" style="display: none">
+                    <label class="col-sm-2">Are you planning to meet again?</label>
+                    <div class="col-sm-10">
+                      <div class="radio">
+                      {{!-- trigger to question five --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" id="dateAgain"> Yes
+                        </label>
+                      {{!-- trigger to next sub question --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" id="dateAgainNo"> No
+                        </label>
+                      </div>
+                    </div>
+                </div>
+
+{{!-- Question 4B --}}
+                <div class="form-group row" id="datingTimes_B" style="display: none">
+                    <label class="col-sm-2">Did you have a conversation about not seeing each other again?</label>
+                    <div class="col-sm-10">
+                      <div class="radio">
+                      {{!-- trigger to  4B_1--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" id="conversationYes"> Yes
+                        </label>
+                      {{!-- trigger to 4C --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" id="conversationNo"> No
+                        </label>
+                      </div>
+                    </div>
+                </div>
+
+{{!-- Question4B_1 --}}
+         {{!-- no toggle --}}
+                            <div class="form-group row" id="datingTimes_B_1" style="display: none">
+                                <label class="col-sm-2">Did you initiate that conversation?</label>
+                                <div class="col-sm-10">
+                                  <div class="radio">
+                                  {{!-- trigger to  question 9 recommend person?--}}
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" class="end" id="q4b_1_yes"> Yes
+                                    </label>
+                                  {{!-- trigger to question 9 recommend person?--}}
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" class="end" id="q4b_1_no"> No
+                                    </label>
+                                  </div>
+                                </div>
+                            </div>
+
+{{!-- Question 4C --}}
+                <div class="form-group row" id="datingTimes_C" style="display: none">
+                    <label class="col-sm-2">Who ceased communication? Ghosted?</label>
+                    <div class="col-sm-10">
+                      <div class="radio">
+                      {{!-- trigger to question 9 recommend person?--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" class="end" id="ghostedThem"> I did. I ghosted that mofo
+                        </label>
+                      {{!-- trigger to question 9 recommend person?--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="optradio" class="end" id="ghostedMe"> They did. They probably think I'm #sterile.
+                        </label>
+                      </div>
+                    </div>
+                </div>
+
+{{!-- Question 5 --}}
+  {{!-- thinking not to put a toggle on this one? --}}
+        <div class="form-group row" id="dateNumber" style="display: none">
+            <label class="col-sm-2">How many more times have you hung out?</label>
+            <div class="col-sm-10">
+              <div class="form-check">
+              {{!-- trigger to question 6 any result --}}
+                <label class="form-check-label">
+                  <input class="form-check-input q5" type="checkbox"> 1-3
+                  <input class="form-check-input q5" type="checkbox"> 4-6
+                  <input class="form-check-input q5" type="checkbox"> 7-10
+                  <input class="form-check-input q5" type="checkbox"> We are still hanging out
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question 6 --}}
+{{!-- no toggle --}}
+        <div class="form-group row" id="attraction" style="display: none">
+            <label class="col-sm-2">Was there physical attraction on the date?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="attracted"> Yes
+                </label>
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="attracted"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question 7 --}}
+        <div class="form-group row" id="physical" style="display: none">
+            <label class="col-sm-2">Were you physically intimate with this person?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to question appearance--}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="intimate"> Yes
+                </label>
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="intimate"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question 8 --}}
+        <div class="form-group row" id="appearance" style="display: none">
+            <label class="col-sm-2">Did your date look like the pictures posted in their profile?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+              {{!-- trigger to question 9 recommend date--}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="fitProfile_yes"> Yes
+                </label>
+              {{!-- trigger to question about difference --}}
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" id="fitProfile_no"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+{{!-- Question 8A --}}
+                <div class="form-group row" id="appearance_A" style="display: none">
+                    <label class="col-sm-2">What was different?</label>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                      {{!-- trigger to question 9 any result --}}
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox">Shorter in person
+                          <input class="form-check-input" type="checkbox">Taller in person
+                          <input class="form-check-input" type="checkbox">Weighed significantly more
+                          <input class="form-check-input" type="checkbox">Weighed significantly less
+                          <input class="form-check-input" type="checkbox">A lot less hair
+                          <input class="form-check-input" type="checkbox">Looked older
+                          <input class="form-check-input" type="checkbox">Looked younger
+                          <input class="form-check-input" type="checkbox">Actually were older
+                          <input class="form-check-input" type="checkbox">Actually were younger
+                          <input class="form-check-input" type="checkbox">Better looking!
+                        </label>
+                      </div>
+                    </div>
+                </div>
+
+{{!-- Question 9 --}}
+        <div class="form-group row" id="recommendFriend" style="display: none">
+            <label class="col-sm-2">Would you recommend this person to a friend?</label>
+            <div class="col-sm-10">
+              <div class="radio">
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="recommend"> Yes
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="optradio" class="recommend"> No
+                </label>
+              </div>
+            </div>
+        </div>
+
+
+{{!-- Nice to knows --}}
           <div class="form-group row">
             <label class="col-sm-2">What type of activity(s) did you do on your date?</label>
             <div class="col-sm-10">
@@ -34,29 +281,21 @@
                   <input class="form-check-input" type="checkbox"> Active/Exercising/Walking
                   <input class="form-check-input" type="checkbox"> Drinks
                   <input class="form-check-input" type="checkbox"> Grabbed Food
-                  <input class="form-check-input" type="checkbox"> Attended a Sporting Event/Concert/Etc
+                  <input class="form-check-input" type="checkbox"> Attended a Sporting Event/Concert
                   <input class="form-check-input" type="checkbox"> "Netflix and Chill"
-                  <input class="form-check-input" type="checkbox" id="neverMet"> We Never Met
+                  <input class="form-check-input" type="checkbox"> Hung out with their friends 
+                  <input class="form-check-input" type="checkbox"> Hung out with their family
                 </label>
               </div>
             </div>
           </div>
 
-        {{!-- triggered when user selects Never Met --}}
-           <div class="form-group row" style="display: none" id="secondQuestion">
-            <label class="col-sm-2">Did you Initiate Conversation?</label>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox"> Yes, I messaged the person first
-                  <input class="form-check-input" type="checkbox"> No, the person messaged me first
-                </label>
-              </div>
-            </div>
-          </div>
+       
+</div>
 
-  </div>
-  {{!-- Closing form group --}}
+</form>
+  
+</div>
 
 
    <div class="form-group">
@@ -84,13 +323,7 @@
               <input type="checkbox" class="form-check-input">Check me out
             </label>
           </div>
-
-      </div>
-      {{!-- Closing form group --}}
-
-</form>
-
-</div>
+  </div>
 
 
 {{!-- Div with search results that will be appended via scrape --}}
@@ -102,4 +335,4 @@
 
 
         </div>
-    </div>
+</div>
