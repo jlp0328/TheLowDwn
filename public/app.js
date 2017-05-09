@@ -94,7 +94,7 @@ $(document).on("click", "#yesDater", function(e) {
 
 //click on the never met checkbox and displays question of who initiated convo
 $(document).on("click", "#neverMet", function(e) {
-	$("#secondQuestion").show();
+	$("#secondQuestion").toggle();
 });
 
 
