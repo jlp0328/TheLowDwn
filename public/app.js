@@ -188,12 +188,12 @@ $(document).on("click", ".recommend", function(e) {
 	$("#activity").show();
 });
 
-//NTK One: all selected go to nice to know two
+//NTK One: all selected go to topics discussed
 $(document).on("click", "#dateActivity", function(e) {
 	$("#topics").show();
 });
 
-//NTK two: all selected display submit button?
+//Topics: all selected display submit button?
 $(document).on("click", "#dateTopics", function(e) {
 	alert("display submit button");
 });
