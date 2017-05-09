@@ -29,6 +29,7 @@ var Review = require("./models/Review");
 
 var routes = require("./routes/index");
 var local = require("./routes/local");
+var fbAuth = require("./routes/passport");
 
 //Express
 var app = express();
@@ -46,11 +47,6 @@ app.use(cookieParser());
 //Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-// app.get("/search", function(req, res){
-//   res.render("searchUsername");
-
-// });
 
 //Express-Session
 app.use(session({
@@ -97,6 +93,7 @@ app.use(function(req, res, next){
 
 app.use("/", routes);
 app.use("/local", local);
+// app.use("/passport", fbAuth);
 
 require("./routes/html-routes.js")(app);
 
@@ -125,16 +122,6 @@ app.listen(port, function() {
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
-
-app.get('/auth/facebook',
-  passport.authenticate('facebook'));
-
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
-
 
 
 //Scraping OkCupid based on daters username
