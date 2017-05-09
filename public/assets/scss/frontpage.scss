@@ -33,19 +33,14 @@
   bottom: 350px;
 }
 
-// .landingPage{
-//   background-color: $background-color;
-//   height: 100vh;
-// }
+.frontPageButtons{
+  position: absolute;
+  bottom: 100px;
 
-.loginButton{
-  position: fixed;
-  bottom: 90px;
+
 }
 
 .newUserButton{
-  position: fixed;
-  bottom: 90px;
-  left: 235px;
+  margin-left: 35px;
 
 }

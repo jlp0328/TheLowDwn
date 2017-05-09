@@ -69,14 +69,12 @@
   color: black;
   bottom: 350px; }
 
-.loginButton {
-  position: fixed;
-  bottom: 90px; }
+.frontPageButtons {
+  position: absolute;
+  bottom: 100px; }
 
 .newUserButton {
-  position: fixed;
-  bottom: 90px;
-  left: 235px; }
+  margin-left: 35px; }
 
 .useCases {
   font-size: 20px; }
@@ -87,42 +85,92 @@
 .appNameRP {
   font-family: "Monoton", cursive;
   font-size: 65px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   color: #ae029b;
-  bottom: 150px; }
+  top: 300px;
+  left: 50px; }
 
 .appNameTwoRP {
   font-family: "Monoton", cursive;
   font-size: 65px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   color: black;
-  bottom: 200px; }
+  top: 250px;
+  left: 50px; }
 
 .appNameThreeRP {
   font-family: "Monoton", cursive;
   font-size: 65px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   color: black;
-  bottom: 250px; }
+  top: 200px;
+  left: 50px; }
 
 .appNameFourRP {
   font-family: "Monoton", cursive;
   font-size: 65px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   color: black;
-  bottom: 300px; }
+  top: 150px;
+  left: 50px; }
 
 .appNameFiveRP {
   font-family: "Monoton", cursive;
   font-size: 65px;
-  position: fixed;
+  position: absolute;
   text-align: center;
   color: black;
-  bottom: 350px; }
+  top: 100px;
+  left: 50px; }
+
+.appNameLogin {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: absolute;
+  text-align: center;
+  color: #ae029b;
+  top: 65px;
+  left: 50px; }
+
+.appNameTwoLogin {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  top: 250px;
+  left: 50px; }
+
+.appNameThreeLogin {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  top: 200px;
+  left: 50px; }
+
+.appNameFourLogin {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  top: 150px;
+  left: 50px; }
+
+.appNameFiveLogin {
+  font-family: "Monoton", cursive;
+  font-size: 65px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  top: 100px;
+  left: 50px; }
 
 body {
   font-family: "Open Sans Condensed", sans-serif; }
