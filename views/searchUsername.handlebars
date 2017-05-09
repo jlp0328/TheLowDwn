@@ -36,7 +36,7 @@
                 </label>
                 {{!-- have a trigger for this question to end it since --}}
                 <label class="radio-inline">
-                  <input type="radio" name="optradio" id="talkNo"> No, we've never messaged
+                  <input type="radio" name="optradio" id="]"> No, we've never messaged
                 </label>
               </div>
             </div>
@@ -81,14 +81,14 @@
 
 {{!-- Question Four --}}
         <div class="form-group row" id="datingTimes" style="display: none">
-            <label class="col-sm-2">Did you meet for more than one date?</label>
+            <label class="col-sm-2">Did you go out on more than one date?</label>
             <div class="col-sm-10">
               <div class="radio">
               {{!-- trigger to next question --}}
                 <label class="radio-inline">
                   <input type="radio" name="optradio" id="dateMultiple"> Yes
                 </label>
-              {{!-- trigger to sub questions --}}
+              {{!-- trigger to Four A --}}
                 <label class="radio-inline">
                   <input type="radio" name="optradio" id="dateOnce"> No
                 </label>
@@ -166,18 +166,24 @@
                 </div>
 
 {{!-- Question 5 --}}
-  {{!-- thinking not to put a toggle on this one? --}}
+  {{!-- No toggle --}}
         <div class="form-group row" id="dateNumber" style="display: none">
             <label class="col-sm-2">How many more times have you hung out?</label>
             <div class="col-sm-10">
-              <div class="form-check">
-              {{!-- trigger to question 6 any result --}}
-                <label class="form-check-label">
-                  <input class="form-check-input q5" type="checkbox"> 1-3
-                  <input class="form-check-input q5" type="checkbox"> 4-6
-                  <input class="form-check-input q5" type="checkbox"> 7-10
-                  <input class="form-check-input q5" type="checkbox"> We are still hanging out
-                </label>
+            {{!-- trigger to question 6 any result --}}
+               <div class="radio">
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" class="q5"> 1-3 
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" class="q5"> 4-6
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" class="q5"> 7-10
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="optradio" class="q5"> We are still hanging out
+                  </label>
               </div>
             </div>
         </div>
@@ -224,11 +230,11 @@
               <div class="radio">
               {{!-- trigger to question 9 recommend date--}}
                 <label class="radio-inline">
-                  <input type="radio" name="optradio" id="fitProfile_yes"> Yes
+                  <input type="radio" name="optradio" id="fitProfileYes"> Yes
                 </label>
               {{!-- trigger to question about difference --}}
                 <label class="radio-inline">
-                  <input type="radio" name="optradio" id="fitProfile_no"> No
+                  <input type="radio" name="optradio" id="fitProfileNo"> No
                 </label>
               </div>
             </div>
@@ -236,7 +242,7 @@
 
 {{!-- Question 8A --}}
                 <div class="form-group row" id="appearance_A" style="display: none">
-                    <label class="col-sm-2">What was different?</label>
+                    <label class="col-sm-2">What was different? Select All That Apply</label>
                     <div class="col-sm-10">
                       <div class="form-check">
                       {{!-- trigger to question 9 any result --}}
@@ -251,6 +257,8 @@
                           <input class="form-check-input" type="checkbox">Actually were older
                           <input class="form-check-input" type="checkbox">Actually were younger
                           <input class="form-check-input" type="checkbox">Better looking!
+                          <input class="form-check-input" type="checkbox" id="attributes">Temp Click once done
+ 
                         </label>
                       </div>
                     </div>
@@ -272,8 +280,8 @@
         </div>
 
 
-{{!-- Nice to knows --}}
-          <div class="form-group row">
+{{!-- Nice to know One --}}
+          <div class="form-group row" id="activity" style="display: none">
             <label class="col-sm-2">What type of activity(s) did you do on your date?</label>
             <div class="col-sm-10">
               <div class="form-check">
@@ -285,22 +293,16 @@
                   <input class="form-check-input" type="checkbox"> "Netflix and Chill"
                   <input class="form-check-input" type="checkbox"> Hung out with their friends 
                   <input class="form-check-input" type="checkbox"> Hung out with their family
+                  <input class="form-check-input" type="checkbox" id="dateActivity"> Temp Once done click here too
+
                 </label>
               </div>
             </div>
           </div>
+{{!-- End of nice to know one --}}
 
-       
-</div>
-
-</form>
-  
-</div>
-
-
-   <div class="form-group">
-
-        <div class="form-group row">
+{{!-- Nice to Know Two --}}
+        <div class="form-group row" id="topics" style="display: none">
           <label class="col-sm-2">What topics were discussed on your date?</label>
           <div class="col-sm-10">
             <div class="form-check">
@@ -313,18 +315,18 @@
                 <input class="form-check-input" type="checkbox"> Bucket List
                 <input class="form-check-input" type="checkbox"> Travel
                 <input class="form-check-input" type="checkbox"> Past Relationships
+                <input class="form-check-input" type="checkbox" id="dateTopics"> Temp Click once done
               </label>
             </div>
           </div>
         </div>
+{{!-- End of Nice to Know Two --}}
 
-          <div class="form-check">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input">Check me out
-            </label>
-          </div>
-  </div>
+</form>
 
+
+</div>
+  
 
 {{!-- Div with search results that will be appended via scrape --}}
 <div class="container col-md-6" style="margin-top: 65px">
