@@ -2,7 +2,7 @@
 <div class="card col-md-6">
   <img class="card-img-top" src="../assets/images/newUser.png" alt="Card image cap" style="margin-top: 100px">
   <div class="card-block" data-id={{user.id}}>
-    <h4 class="card-title insert-username">{{user.username}}</h4>
+    <h2 class="card-title insert-username">Hi {{user.name}}!</h2>
 <!--     <p class="card-text">
       Some quick example text to build on the card title
       and make up the bulk of the card's content.
@@ -44,9 +44,9 @@
 
 <ul class="useCases-ul"> You can use <span class="theLowDwn">The Lowdwn.</span> to:
 
-<li class="useCases"><a href="/myAccount/read">Read reviews</a> of other daters (or even those about you!),</li>
-<li class="useCases"><a href="/myAccount/search">Write reviews</a> about past or current daters, or...</li>
-<li class="useCases"><a href="/myAccount/blog">Give us <span class="theLowDwn">The LowDwn.</span></a> on your dating experiences. We want to hear your stories!</li>
+<li class="useCases"><a href="/{{this.username}}/read">Read reviews</a> of other daters (or even those about you!),</li>
+<li class="useCases"><a href="/{{this.username}}/search">Write reviews</a> about past or current daters, or...</li>
+<li class="useCases"><a href="/{{this.username}}/blog">Give us <span class="theLowDwn">The LowDwn.</span></a> on your dating experiences. We want to hear your stories!</li>
 
 </ul>
 

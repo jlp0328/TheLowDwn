@@ -5,6 +5,7 @@
 @import "homepageAndMyReviews";
 @import "registration";
 @import "login";
+@import "search";
 
 body{
   font-family: $body-font;
@@ -50,6 +51,14 @@ body{
 
 h1 {
   color: $purple;
+  font-size: 50px;
 }
+
+h2 {
+
+   font-size: 40px;
+
+}
+
 
 

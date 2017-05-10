@@ -3,11 +3,23 @@ var router = express.Router();
 var path = require("path");
 
 var User = require("../models/User");
+var Review = require("../models/Review");
+var Dater = require("../models/Dater");
+var Story = require("../models/Story");
 
 //Get homepage
 router.get("/", function(req, res){
   res.render("index");
 });
+
+//User Dashboard that has access to their personal reviews
+router.get("/:username", ensureAuthentication, function(req, res){
+
+  var login = req.params.username;
+
+     res.render("homepageAndReviews", {username: login});
+
+  });
 
 //Search users to write dater reviews
 router.get("/:username/search", function(req, res){
@@ -22,7 +34,7 @@ router.get("/:username/search", function(req, res){
 router.get("/:username/review", function(req, res){
    var login = req.params.username;
 
-  res.render("writeReview", {username: login});
+  res.render("reviewSummary", {username: login});
 });
 
 //Search for a user in the db to read their reviews
@@ -39,14 +51,7 @@ router.get("/:username/blog", function(req, res){
   res.render("blog", {username: login});
 });
 
-//Read your saved dater reviews
-router.get("/:username", ensureAuthentication, function(req, res){
 
-  var login = req.params.username;
-
-     res.render("homepageAndReviews", {username: login});
-
-  });
 
 function ensureAuthentication(req, res, next){
     if(req.isAuthenticated()){

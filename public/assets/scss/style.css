@@ -172,6 +172,19 @@
   top: 100px;
   left: 50px; }
 
+.card-img-top {
+  height: 300px;
+  width: 300px; }
+
+#daterName {
+  font-size: 26px; }
+
+#daterLocation, #daterAge, .lookingFor {
+  font-size: 20px; }
+
+label {
+  font-size: 20px; }
+
 body {
   font-family: "Open Sans Condensed", sans-serif; }
 
@@ -204,6 +217,10 @@ body {
   color: #084AA4; }
 
 h1 {
-  color: #ae029b; }
+  color: #ae029b;
+  font-size: 50px; }
+
+h2 {
+  font-size: 40px; }
 
 /*# sourceMappingURL=style.css.map */
