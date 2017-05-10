@@ -10,15 +10,15 @@ var DaterSchema = new Schema ({
 	},
 	location: {
 		type: String,
-		required: false
+		required: true
 	},
 	age: {
 		type: String,
-		required: false
+		required: true
 	},
 	image: {
 		type: String,
-		required: false
+		required: true
 	},
 	//need to look at which table this refers to
 	review: {
