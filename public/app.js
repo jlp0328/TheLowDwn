@@ -91,7 +91,7 @@ $(document).on("click", "#yesDater", function(e) {
 
 });
 //On Click Events for Questions on Review
-//Q1: yes to go to show 2 
+//Q1: yes to go to show 2
 $(document).on("click", "#talkYes", function(e) {
 	$("#initiate").show();
 });
