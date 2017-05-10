@@ -174,6 +174,71 @@ app.post("/dateScrape", function(req, res) {
       }//end of else
     };
 });
+
+app.post("/:username/review", function(req, res){
+
+    var user = req.params.username;
+
+    var datername = req.body.datername;
+    var q1 = req.body.q1;
+    var q2 = req.body.q2;
+    var q3 = req.body.q3;
+    var q4 = req.body.q4;
+    var q4a = req.body.q4a;
+    var q4b = req.body.q4b;
+    var q4b1 = req.body.q4b1;
+    var q4c = req.body.q4c;
+    var q5 = req.body.q5;
+    var q6 = req.body.q6;
+    var q7 = req.body.q7;
+    var q8 = req.body.q8;
+    var q8a = req.body.q8a;
+    var q9 = req.body.q9;
+    var q10 = req.body.q10;
+    var q11 = req.body.q11;
+
+    console.log(datername);
+
+
+    if(errors){
+      res.render("writeReview", {
+        errors: errors
+      });
+
+    } else{
+        var newReview = new Review({
+          datername: datername,
+            q1: req.body.q1,
+            q2: req.body.q2,
+            q3: req.body.q3,
+            q4: req.body.q4,
+            q4a: req.body.q4a,
+            q4b: req.body.q4b,
+            q4b1: req.body.q4b1,
+            q4c: req.body.q4c,
+            q5: req.body.q5,
+            q6: req.body.q6,
+            q7: req.body.q7,
+            q8: req.body.q8,
+            q8a: req.body.q8a,
+            q9: req.body.q9,
+            q10: req.body.q10,
+            q11: req.body.q11
+        });
+
+        console.log(newReview);
+
+        Review.createUser(newReview, function (err, review){
+            if(err) throw err;
+            console.log(review);
+
+        });
+
+        req.flash("success_msg", "Your review has been successfully submitted!");
+        res.redirect("/:username/read", {username: user});
+    }
+
+});
 ////////////
 ////////////////
 //post to make review, will need some tweaking
