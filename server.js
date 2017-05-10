@@ -163,7 +163,7 @@ app.post("/dateScrape", function(req, res) {
 
         });
     }//end of else where div exists for scrape
-  });//end of scrape request   
+  });//end of scrape request
 });
 
 app.post("/:username/review", function(req, res){
@@ -190,14 +190,7 @@ app.post("/:username/review", function(req, res){
 
     console.log(datername);
 
-
-    if(errors){
-      res.render("writeReview", {
-        errors: errors
-      });
-
-    } else{
-        var newReview = new Review({
+        var entry = new Review({
           datername: datername,
             q1: req.body.q1,
             q2: req.body.q2,
@@ -217,17 +210,16 @@ app.post("/:username/review", function(req, res){
             q11: req.body.q11
         });
 
-        console.log(newReview);
+        // console.log(newReview);
 
-        Review.createUser(newReview, function (err, review){
+        entry.save(function (err, review){
             if(err) throw err;
             console.log(review);
 
         });
 
         req.flash("success_msg", "Your review has been successfully submitted!");
-        res.redirect("/:username/read", {username: user});
-    }
+        res.render("review");
 
 });
 ////////////
