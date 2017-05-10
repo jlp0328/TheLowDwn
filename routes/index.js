@@ -3,9 +3,14 @@ var router = express.Router();
 var path = require("path");
 
 var User = require("../models/User");
+<<<<<<< HEAD
 var Review = require("../models/Review");
 var Dater = require("../models/Dater");
 var Story = require("../models/Story");
+=======
+var Dater = require("../models/Dater");
+var Review = require("../models/Review");
+>>>>>>> 64815b6724b70eef94f134e9dac7cc82ba68cbbf
 
 //Get homepage
 router.get("/", function(req, res){
