@@ -126,7 +126,6 @@ app.get("/", function(req, res) {
 
 //Scraping OkCupid based on daters username
 app.post("/dateScrape", function(req, res) {
-
   var result = {};
   var daterName = req.body.username;
 
@@ -137,28 +136,20 @@ app.post("/dateScrape", function(req, res) {
 
     var $ = cheerio.load(html);
 
+    var daterInfo = $("div.userinfo2015");
+    if(daterInfo.length == 0) {
+      console.log("homie don't play dat");
+        req.flash("error_msg", "Please provide a valid username from OkCupid");
+    }
+    else {
+
     $("div.userinfo2015").each(function (i, element) {
-      //may need to add class of active somehow
       result.image= $(this).find("div.userinfo2015-thumb").find("img.active").attr("src");
       result.age= $(this).find(".userinfo2015-basics-asl-age").text();
       result.location= $(this).find(".userinfo2015-basics-asl-location").text();
       console.log("result after scrape: " + result);
-      // result.username= $(element).find(".userinfo2015-basics-username").text();
-    })
-    daterBase();
-  });//end of scrape request
-
-  //dater going into the database.
-  function daterBase() {
-
-      if (result.image === null) {
-        console.log("test");
-        //have page tell user no dater exists
-        // res.render("<h3>User Not Found</h3>");
-      }
-
-      else {
-        // console.log("full result" + result);
+    });
+        //dater going into the database.
         var entry = new Dater(result);
 
         entry.save(function(err, doc) {
@@ -168,11 +159,11 @@ app.post("/dateScrape", function(req, res) {
           }
           else {
             res.send(doc);
-                    }
+          }
+
         });
-        // res.redirect("/review");
-      }//end of else
-    };
+    }//end of else where div exists for scrape
+  });//end of scrape request   
 });
 ////////////
 ////////////////
@@ -184,7 +175,7 @@ app.post("/dateScrape", function(req, res) {
 //       console.log(error);
 //     }
 //     else {
-//       Dater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
+//       xDater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
 //           if (error) {
 //             console.log(error);
 //           }

@@ -4,47 +4,74 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ReviewSchema = new Schema ({
-	username: {
+	datername: {
 		type: String,
 		required: true
 	},
-	questionOne: {
+	q1: {
 		type: String,
 		required: false
 	},
-	questionTwo: {
+	q2: {
 		type: String,
 		required: false
 	},
-	questionThree: {
+	q3: {
 		type: String,
 		required: false
 	},
-	questionFour: {
+	q4: {
 		type: String,
 		required: false
 	},
-	questionFive: {
+	q4a: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q4b: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q4b1: {
 		type: String,
 		required: false
 	},
-	questionSix: {
+	q4c: {
 		type: String,
 		required: false
 	},
-	questionSeven: {
+	q5: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q6: {
 		type: String,
 		required: false
 	},
-	questionEight: {
+	q7: {
 		type: String,
 		required: false
 	},
-	questionNine: {
+	q8: {
 		type: String,
 		required: false
 	},
-	questionTen: {
+	q8a: {
+		type: String,
+		required: false
+	},
+	q9: {
+		type: String,
+		required: false
+	},
+	q10: {
+		type: String,
+		required: false
+	},
+	q11: {
 		type: String,
 		required: false
 	},
