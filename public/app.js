@@ -26,7 +26,7 @@ $(document).on("click", ".findDater", function(e) {
 		//empty div on frontend, need div on frontend with emptiness but a card class
 		$("#daterDiv").empty();
 		//potentially remove href from yes button in order to carry username throughout
-		var html = "<h3 class='card-title' id='daterName'>" + data.username + "</h3>" +
+		var html = "<h3 class='card-title' id='daterName' name='datername'>" + data.username + "</h3>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
 			      "<h4 id='daterLocation'>" + data.location + "</h4>" +
 			      "<h4 id='daterAge'>" + data.age + "</h4>" + "<div class='yesOrNo' style='display:show'>" +
