@@ -35,10 +35,10 @@
               <ul class="nav navbar-nav">
 
                   {{#if user}}
-                  <li><a style="color: white" href="/:username">Home</a></li>
-                  <li><a style="color: white" href="/:username/read">Read Reviews</a></li>
-                  <li><a style="color: white" href="/:username/search">Write Reviews</a></li>
-                  <li><a style="color: white" href="/:username/blog">Get The LowDwn.</a></li>
+                  <li><a style="color: white" href="/{{this.username}}">Home</a></li>
+                  <li><a style="color: white" href="/{{this.username}}/read">Read Reviews</a></li>
+                  <li><a style="color: white" href="/{{this.username}}/search">Write Reviews</a></li>
+                  <li><a style="color: white" href="/{{this.username}}/blog">Get The LowDwn.</a></li>
                   <li><a style="color: white" href="/local/logout">Logout</a></li>
                   {{/if}}
 
@@ -47,7 +47,7 @@
           </div>
         </div>
 
-<div class="container">
+<div class="container mainContainer">
 
           {{#if success_msg}}
             <div class="alert alert-success" style="margin-top: 65px">{{success_msg}}</div>
@@ -63,14 +63,15 @@
 
 {{{body}}}
 
-
-</div>
-
-<div>
-
   <footer class="footer col-md-12" id="Footer"></footer>
 
 </div>
+
+{{!-- <div> --}}
+
+
+
+{{!-- </div> --}}
 
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
