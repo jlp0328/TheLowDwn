@@ -3,6 +3,8 @@ var router = express.Router();
 var path = require("path");
 
 var User = require("../models/User");
+var Dater = require("../models/Dater");
+var Review = require("../models/Review");
 
 //Get homepage
 router.get("/", function(req, res){

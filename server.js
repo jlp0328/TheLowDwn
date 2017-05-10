@@ -147,6 +147,7 @@ app.post("/dateScrape", function(req, res) {
       result.image= $(this).find("div.userinfo2015-thumb").find("img.active").attr("src");
       result.age= $(this).find(".userinfo2015-basics-asl-age").text();
       result.location= $(this).find(".userinfo2015-basics-asl-location").text();
+
       console.log("result after scrape: " + result);
     });
         //dater going into the database.
@@ -166,6 +167,7 @@ app.post("/dateScrape", function(req, res) {
   });//end of scrape request
 });
 
+//changed route from /:username/review
 app.post("/:username/review", function(req, res){
 
     var user = req.params.username;
@@ -187,27 +189,30 @@ app.post("/:username/review", function(req, res){
     var q9 = req.body.q9;
     var q10 = req.body.q10;
     var q11 = req.body.q11;
+//update variable score once do math
+    var score = 99;
 
     console.log(datername);
 
         var entry = new Review({
           datername: datername,
-            q1: req.body.q1,
-            q2: req.body.q2,
-            q3: req.body.q3,
-            q4: req.body.q4,
-            q4a: req.body.q4a,
-            q4b: req.body.q4b,
-            q4b1: req.body.q4b1,
-            q4c: req.body.q4c,
-            q5: req.body.q5,
-            q6: req.body.q6,
-            q7: req.body.q7,
-            q8: req.body.q8,
-            q8a: req.body.q8a,
-            q9: req.body.q9,
-            q10: req.body.q10,
-            q11: req.body.q11
+            q1: q1,
+            q2: q2,
+            q3: q3,
+            q4: q4,
+            q4a: q4a,
+            q4b: q4b,
+            q4b1: q4b1,
+            q4c: q4c,
+            q5: q5,
+            q6: q6,
+            q7: q7,
+            q8: q8,
+            q8a: q8a,
+            q9: q9,
+            q10: q10,
+            q11: q11,
+            score: score
         });
 
         // console.log(newReview);
@@ -219,7 +224,7 @@ app.post("/:username/review", function(req, res){
         });
 
         req.flash("success_msg", "Your review has been successfully submitted!");
-        res.render("review");
+        res.render("review", {Review: review});
 
 });
 ////////////

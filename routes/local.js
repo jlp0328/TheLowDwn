@@ -6,7 +6,8 @@ var LocalStrategy = require("passport-local").Strategy;
 var passport = require("passport");
 
 var User = require("../models/User");
-
+var Dater = require("../models/Dater");
+var Review = require("../models/Review");
 
 //Register
 router.get("/register", function(req, res){
