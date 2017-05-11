@@ -225,9 +225,8 @@ app.post("/:username/review", function(req, res){
             if(err) throw err;
             // console.log(review);
 
-        req.flash("success_msg", "Your review has been successfully submitted!");
-//this probably needs to go up a line within the .save(fn)
         res.render("reviewSummary", {Review: review});
+        req.flash("success_msg", "Your review has been successfully submitted!");
         });
 
 });
