@@ -36,11 +36,13 @@ var ReviewSchema = new Schema ({
 	},
 	q4b1: {
 		type: String,
-		required: false
+		required: false,
+		default: null
 	},
 	q4c: {
 		type: String,
-		required: false
+		required: false,
+		default: null
 	},
 	q5: {
 		type: String,
@@ -61,7 +63,8 @@ var ReviewSchema = new Schema ({
 	},
 	q8a: {
 		type: String,
-		required: false
+		required: false,
+		default: null
 	},
 	q9: {
 		type: String,
