@@ -25,8 +25,8 @@ $(document).on("click", ".findDater", function(e) {
 		$("#writeReviewSearch").val("");
 		//empty div on frontend, need div on frontend with emptiness but a card class
 		$("#daterDiv").empty();
-
-		var html = "<p class='card-title' id='daterName' name='datername' value=" + data.username + ">" + data.username + "</p>" +
+// removed name of datername, don't think i needed it in html
+		var html = "<p class='card-title' id='daterName' value=" + data.username + ">" + data.username + "</p>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
 			      "<p id='daterLocation'>" + data.location + "</p>" +
 			      "<p id='daterAge' name='userAge'>" + data.age + "</p>" + "<div class='yesOrNo' style='display:show'>" +
@@ -42,23 +42,25 @@ $(document).on("click", ".findDater", function(e) {
 
 });
 
-//user selecting dater to make review on use this when hit submit
-$(document).on("click", ".reviewSubmit", function(e) {
+//user selecting dater to make review on use this when hit yes button
+$(document).on("click", "#yesDater", function(e) {
 	e.preventDefault();
 
 	var daterName = $("#daterName").attr("value");
 	console.log("ClickSubmit: " + daterName);
 
-	$.ajax({
-		method: "POST",
-		url: "/:username/review",
-		data: {
-			datername: daterName
-		}
-	})
-	.done(function(data) {
-		console.log("it worked...");
-	});
+	$("#inputDatername").attr("value", daterName);
+
+	// $.ajax({
+	// 	method: "POST",
+	// 	url: "/:username/review",
+	// 	data: {
+	// 		datername: daterName
+	// 	}
+	// })
+	// .done(function(data) {
+	// 	console.log("it worked...");
+	// });
 });
 /////////////////////////
 ///////////////
@@ -194,8 +196,10 @@ $(document).on("click", "#dateActivity", function(e) {
 	$("#topics").show();
 });
 
-//Topics: all selected display submit button?
+//Topics: all selected display submit button and input field for nice input
 $(document).on("click", "#dateTopics", function(e) {
-	alert("display submit button");
+	$(".niceInput").show();
 });
+
+
 

@@ -78,6 +78,11 @@ var ReviewSchema = new Schema ({
 		type: String,
 		required: false
 	},
+	nicety: {
+		type: String,
+		require: false,
+		default: null
+	},
 	score: {
 		type: String,
 		require: false
