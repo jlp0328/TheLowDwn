@@ -99,8 +99,21 @@ app.use("/local", local);
 require("./routes/html-routes.js")(app);
 
 
-mongoose.connect("mongodb://localhost/thelowdwn");
-var db = mongoose.connection;
+mongoose.connect(db, function(error){
+  if (error){
+    console.log(error);
+  } else {
+
+    console.log("Working!!!!!")
+  }
+
+});
+// var db = mongoose.connection;
+
+// mongoose.connect("mongodb://heroku_89n03gfl:evsmtsk2gc0eaaml61i16scgr0@ds137261.mlab.com:37261/heroku_89n03gfl");
+// var db = mongoose.connection;
+
+var db = process.env.MONGODB_URI || "mongodb://localhost/thelowdwn";
 
 // Show any mongoose errors
 db.on("error", function(error) {
@@ -171,7 +184,7 @@ app.post("/:username/review", function(req, res){
     var user = req.params.username;
 
     // console.log("testing shittttt", req.body.datername);
-  
+
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     var datername = req.body.datername;
     console.log("PLEASE WORK: ", datername);
@@ -244,7 +257,7 @@ app.post("/:username/blog", function(req, res) {
       username: username,
       category: category,
       title: title,
-      story: story 
+      story: story
     });
 
     entry.save(function (err, doc) {
@@ -266,12 +279,12 @@ app.get("/:username/blog", function(req, res) {
     if (error) {
       console.log(error);
     }
-     
+
       res.render("readstory", {story: doc});
-    
+
   });
 });
-//end of trying to display dating stories 
+//end of trying to display dating stories
 
 
 ////////////
