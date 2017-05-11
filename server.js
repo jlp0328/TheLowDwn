@@ -174,7 +174,7 @@ app.post("/:username/review", function(req, res){
   
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     var datername = req.body.datername;
-    console.log(datername);
+    console.log("PLEASE WORK: ", datername);
 
     var q1 = req.body.q1;
     var q2 = req.body.q2;
@@ -192,8 +192,9 @@ app.post("/:username/review", function(req, res){
     var q9 = req.body.q9;
     var q10 = req.body.q10;
     var q11 = req.body.q11;
+    var nicety = req.body.nice;
 //update variable score once do math
-    var score = "99";
+    var score = "75";
 
         var entry = new Review({
           datername: datername,
@@ -213,6 +214,8 @@ app.post("/:username/review", function(req, res){
             q9: q9,
             q10: q10,
             q11: q11,
+            nicety: nicety,
+
             score: score
         });
 
@@ -222,10 +225,10 @@ app.post("/:username/review", function(req, res){
             if(err) throw err;
             // console.log(review);
 
-        });
-//this probably needs to go up a line within the .save(fn)
         req.flash("success_msg", "Your review has been successfully submitted!");
-        // res.render("review", {Review: review});
+//this probably needs to go up a line within the .save(fn)
+        res.render("reviewSummary", {Review: review});
+        });
 
 });
 
@@ -248,8 +251,8 @@ app.post("/:username/blog", function(req, res) {
     entry.save(function (err, doc) {
       if (err) throw err;
 
+    res.render("readstory", {story: doc});
     });
-    res.redirect("/homepageAndReviews");
 
 });
 //end of posting dating story
@@ -265,7 +268,7 @@ app.get("/:username/blog", function(req, res) {
       console.log(error);
     }
      
-      res.render("homepageAndReviews", {story: doc});
+      res.render("readstory", {story: doc});
     
   });
 });

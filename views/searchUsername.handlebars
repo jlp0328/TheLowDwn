@@ -25,6 +25,10 @@
 
     <form method="post" action="/{{username}}/review">
 
+{{!-- hidden input for datername to be taken with form submission --}}
+      <input type="hidden" id="inputDatername" name="datername" value="">
+    
+
 {{!-- Question One --}}
     <div class="form-group">
         <div class="form-group row" id="correspond" style="margin-top: 10px">
@@ -450,16 +454,24 @@
                       <label><input type="checkbox" value="pr">Past Relationships</label>
                     </div>
 
-{{!--                     <div class="checkbox">
+
+                    <div class="checkbox">
                       <label style="margin-top: 30px"><input type="checkbox" id="dateTopics">Click here to proceed to the next question.</label>
-                    </div> --}}
+                    </div>
 
               </label>
             </div>
           </div>
         </div>
-
+    <div class="niceInput" style="display:none">
+      <p>Say Something Nice About them:</p>
+      <input type="text" name="nice">
+      {{!-- need to make sure capture input field --}}
+      <br></br>
   <button type="submit" class="btn btn-primary btn-lg outline reviewSubmit">Submit</button>
+    </div>
+    
+
 
 
 
