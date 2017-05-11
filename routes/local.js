@@ -23,11 +23,11 @@ router.get("/login", function(req, res){
 
 //Register
 router.post("/register", function(req, res){
-    var name = req.body.name;
-    var email = req.body.email;
-    var username = req.body.username;
-    var password = req.body.password;
-    var confirmPassword = req.body.confirm;
+    var name = (req.body.name).trim();
+    var email = (req.body.email).trim();
+    var username = (req.body.username).trim();
+    var password = (req.body.password).trim();
+    var confirmPassword = (req.body.confirm).trim();
 
     console.log(name);
     console.log(password);

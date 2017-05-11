@@ -7,7 +7,6 @@ var Review = require("../models/Review");
 var Dater = require("../models/Dater");
 var Story = require("../models/Story");
 var Dater = require("../models/Dater");
-var Review = require("../models/Review");
 
 //Get homepage
 router.get("/", function(req, res){
@@ -28,15 +27,20 @@ router.get("/:username/search", function(req, res){
 
    var login = req.params.username;
 
-  res.render("searchUsername", {username: login});
+   var datername = req.body.datername;
+
+  res.render("searchUsername", {username: login, datername: datername});
 
 });
 
 //Answer questions about dater
 router.get("/:username/review", function(req, res){
+
    var login = req.params.username;
 
-  res.render("reviewSummary", {username: login});
+    var datername = req.body.datername;
+
+  res.render("reviewSummary", {username: login, datername: datername});
 });
 
 //Search for a user in the db to read their reviews

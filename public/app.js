@@ -29,10 +29,10 @@ $(document).on("click", ".findDater", function(e) {
 		var html = "<p class='card-title' id='daterName' name='datername' value=" + data.username + ">" + data.username + "</p>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
 			      "<p id='daterLocation'>" + data.location + "</p>" +
-			      "<p id='daterAge'>" + data.age + "</p>" + "<div class='yesOrNo' style='display:show'>" +
+			      "<p id='daterAge' name='userAge'>" + data.age + "</p>" + "<div class='yesOrNo' style='display:show'>" +
 			      "<p class='lookingFor'>Is this who you were looking for?</p>" +
 			      "<a class=btn btn-primary id='yesDater' data-id=" + data.username +">" + "Yes?" + "</a>" +
-			      "<a class=btn btn-primary href='/myAccount/search'>" + "No?" + "</a>" + "</div>";
+			      "<a class=btn btn-primary id='noDater' href='/myAccount/search'>" + "No?" + "</a>" + "</div>";
 			      //href for clicking yes to go to questions: href='/myAccount/review'
 			      // "<a class=btn btn-primary id='yesDater' href='/myAccount/review/:" + data.username + "'data-id=" + data.username +">" + "Yes?" + "</a>"
 			      //"data-id=" + data.username +

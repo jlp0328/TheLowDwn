@@ -26,6 +26,7 @@ mongoose.Promise = Promise;
 var Dater = require("./models/Dater");
 var User = require("./models/User");
 var Review = require("./models/Review");
+var Story = require("./models/Story");
 
 var routes = require("./routes/index");
 var local = require("./routes/local");
@@ -168,9 +169,12 @@ app.post("/dateScrape", function(req, res) {
 });
 
 app.post("/:username/review", function(req, res){
+
     var user = req.params.username;
 
-    console.log("testing shittttt", req.body.datername);
+    var datername = req.body.datername;
+
+    console.log("testing shittttt", datername);
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     // var datername = req.body.datername;
     // console.log(datername);
