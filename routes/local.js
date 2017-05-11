@@ -8,6 +8,7 @@ var passport = require("passport");
 var User = require("../models/User");
 var Dater = require("../models/Dater");
 var Review = require("../models/Review");
+var Story = require("../models/Story");
 
 //Register
 router.get("/register", function(req, res){

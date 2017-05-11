@@ -43,22 +43,23 @@ $(document).on("click", ".findDater", function(e) {
 });
 
 //user selecting dater to make review on use this when hit submit
-// $(document).on("click", "#submit", function(e) {
-// 	e.preventDefault();
+$(document).on("click", ".reviewSubmit", function(e) {
+	e.preventDefault();
 
-// 	var daterName = $(this).attr("data-id");
-// 	console.log("ClickYes: " + daterName);
-// 	$.ajax({
-// 		method: "POST",
-// 		url: "/review",
-// 		data: {
-// 			username: daterName
-// 		}
-// 	})
-// 	.done(function(data) {
-// 		console.log(data);
-// 	});
-// });
+	var daterName = $("#daterName").attr("value");
+	console.log("ClickSubmit: " + daterName);
+
+	$.ajax({
+		method: "POST",
+		url: "/:username/review",
+		data: {
+			datername: daterName
+		}
+	})
+	.done(function(data) {
+		console.log("it worked...");
+	});
+});
 /////////////////////////
 ///////////////
 //on click for searching for user to read reviews
