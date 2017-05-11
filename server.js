@@ -167,12 +167,15 @@ app.post("/dateScrape", function(req, res) {
   });//end of scrape request
 });
 
-//changed route from /:username/review
 app.post("/:username/review", function(req, res){
-
     var user = req.params.username;
 
-    var datername = req.body.datername;
+    console.log("testing shittttt", req.body.datername);
+//datername not being recognized....need to figure that out but if hardcode in a value it goes to db
+    // var datername = req.body.datername;
+    // console.log(datername);
+
+
     var q1 = req.body.q1;
     var q2 = req.body.q2;
     var q3 = req.body.q3;
@@ -190,12 +193,11 @@ app.post("/:username/review", function(req, res){
     var q10 = req.body.q10;
     var q11 = req.body.q11;
 //update variable score once do math
-    var score = 99;
+    var score = "99";
 
-    console.log(datername);
 
         var entry = new Review({
-          datername: datername,
+          datername: "datername",
             q1: q1,
             q2: q2,
             q3: q3,
@@ -219,37 +221,16 @@ app.post("/:username/review", function(req, res){
 
         entry.save(function (err, review){
             if(err) throw err;
-            console.log(review);
+            // console.log(review);
 
         });
 
         req.flash("success_msg", "Your review has been successfully submitted!");
-        res.render("review", {Review: review});
+        // res.render("review", {Review: review});
 
 });
 ////////////
 ////////////////
-//post to make review, will need some tweaking
-// app.post("/review", function(req, res) {
-//   var newReview = new Review(req.body);
-//   newReview.save(function(error, doc) {
-//     if (error) {
-//       console.log(error);
-//     }
-//     else {
-//       xDater.findOneAndUpdate({ "_id": req.params.username }, { "review": doc.username }).exec(function(error, doc) {
-//           if (error) {
-//             console.log(error);
-//           }
-//           else {
-//             res.send(doc);
-//           }
-//         });
-//     }
-//   });
-// });
-/////////////
-///////////////
 //get reviews on a dater
 //not sure if the Review: doc will work. not sure how doc will come out, in news one we had it go to another route but this one we will be showing results to same page..maybe can use handlebars to handle this doc.
 //Need to see about if user not in db, tell user either check spelling or no reviews made yet..
