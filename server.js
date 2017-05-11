@@ -148,8 +148,6 @@ app.post("/dateScrape", function(req, res) {
       result.image= $(this).find("div.userinfo2015-thumb").find("img.active").attr("src");
       result.age= $(this).find(".userinfo2015-basics-asl-age").text();
       result.location= $(this).find(".userinfo2015-basics-asl-location").text();
-
-      console.log("result after scrape: " + result);
     });
         //dater going into the database.
         var entry = new Dater(result);
@@ -172,13 +170,11 @@ app.post("/:username/review", function(req, res){
 
     var user = req.params.username;
 
-    var datername = req.body.datername;
-
-    console.log("testing shittttt", datername);
+    // console.log("testing shittttt", req.body.datername);
+  
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
-    // var datername = req.body.datername;
-    // console.log(datername);
-
+    var datername = req.body.datername;
+    console.log(datername);
 
     var q1 = req.body.q1;
     var q2 = req.body.q2;
@@ -199,9 +195,8 @@ app.post("/:username/review", function(req, res){
 //update variable score once do math
     var score = "99";
 
-
         var entry = new Review({
-          datername: "datername",
+          datername: datername,
             q1: q1,
             q2: q2,
             q3: q3,
@@ -228,11 +223,55 @@ app.post("/:username/review", function(req, res){
             // console.log(review);
 
         });
-
+//this probably needs to go up a line within the .save(fn)
         req.flash("success_msg", "Your review has been successfully submitted!");
         // res.render("review", {Review: review});
 
 });
+
+
+//post dating story to story table
+app.post("/:username/blog", function(req, res) {
+  var username = req.params.username;
+
+    var category = req.body.storyCategory;
+    var title = req.body.storyTitle;
+    var story = req.body.storyContent;
+
+    var entry = new Story({
+      username: username,
+      category: category,
+      title: title,
+      story: story 
+    });
+
+    entry.save(function (err, doc) {
+      if (err) throw err;
+
+    });
+    res.redirect("/homepageAndReviews");
+
+});
+//end of posting dating story
+
+
+//trying to display dating stories from story table
+app.get("/:username/blog", function(req, res) {
+
+  var query = Story.find({}).sort({$natural: -1}).limit(10);
+
+  query.exec(function(error, doc) {
+    if (error) {
+      console.log(error);
+    }
+     
+      res.render("homepageAndReviews", {story: doc});
+    
+  });
+});
+//end of trying to display dating stories 
+
+
 ////////////
 ////////////////
 //get reviews on a dater
