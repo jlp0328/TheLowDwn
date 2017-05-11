@@ -26,12 +26,11 @@ $(document).on("click", ".findDater", function(e) {
 		//empty div on frontend, need div on frontend with emptiness but a card class
 		$("#daterDiv").empty();
 
-		var html = "<h3 class='card-title' id='daterName' name='datername' value=" + 
-				  data.username + ">" + data.username + "</h3>" +
+		var html = "<p class='card-title' id='daterName' name='datername' value=" + data.username + ">" + data.username + "</p>" +
 			      "<img class='card-img-top pic' src=" + data.image + ">" +
-			      "<h4 id='daterLocation'>" + data.location + "</h4>" +
-			      "<h4 id='daterAge'>" + data.age + "</h4>" + "<div class='yesOrNo' style='display:show'>" +
-			      "<h4>Is this who you were looking for?</h4>" +
+			      "<p id='daterLocation'>" + data.location + "</p>" +
+			      "<p id='daterAge'>" + data.age + "</p>" + "<div class='yesOrNo' style='display:show'>" +
+			      "<p class='lookingFor'>Is this who you were looking for?</p>" +
 			      "<a class=btn btn-primary id='yesDater' data-id=" + data.username +">" + "Yes?" + "</a>" +
 			      "<a class=btn btn-primary href='/myAccount/search'>" + "No?" + "</a>" + "</div>";
 			      //href for clicking yes to go to questions: href='/myAccount/review'

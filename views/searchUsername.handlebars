@@ -28,8 +28,9 @@
 {{!-- Question One --}}
     <div class="form-group">
         <div class="form-group row" id="correspond">
-            <label class="col-sm-2">Did you correspond with this person?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6
+            ">Did you correspond with this person?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to next question --}}
                 <label class="radio-inline">
@@ -48,8 +49,8 @@
 {{!-- Question Two --}}
 {{!-- don't have a toggle because either way move to next question --}}
         <div class="form-group row" id="initiate" style="display: none">
-            <label class="col-sm-2">Did you initiate the intitial conversation?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Did you initiate the intitial conversation?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to next question --}}
               {{!-- put a class on the buttons because it doesn't matter what answer is --}}
@@ -67,8 +68,8 @@
 
 {{!-- Question Three --}}
         <div class="form-group row" id="inPerson" style="display: none">
-            <label class="col-sm-2">Did you meet in person?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Did you meet in person?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to next question --}}
                 <label class="radio-inline">
@@ -85,8 +86,8 @@
 
 {{!-- Question Four --}}
         <div class="form-group row" id="datingTimes" style="display: none">
-            <label class="col-sm-2">Did you go out on more than one date?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Did you go out on more than one date?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to next question --}}
                 <label class="radio-inline">
@@ -103,8 +104,8 @@
 
 {{!-- Question Four A --}}
                 <div class="form-group row" id="datingTimes_A" style="display: none">
-                    <label class="col-sm-2">Are you planning to meet again?</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-6">Are you planning to meet again?</label>
+                    <div class="col-sm-6">
                       <div class="radio">
                       {{!-- trigger to question five --}}
                         <label class="radio-inline">
@@ -121,8 +122,9 @@
 
 {{!-- Question 4B --}}
                 <div class="form-group row" id="datingTimes_B" style="display: none">
-                    <label class="col-sm-2">Did you have a conversation about not seeing each other again?</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-6
+                    ">Did you have a conversation about not seeing each other again?</label>
+                    <div class="col-sm-6">
                       <div class="radio">
                       {{!-- trigger to  4B_1--}}
                         <label class="radio-inline">
@@ -140,8 +142,8 @@
 {{!-- Question4B_1 --}}
          {{!-- no toggle --}}
                             <div class="form-group row" id="datingTimes_B_1" style="display: none">
-                                <label class="col-sm-2">Did you initiate that conversation?</label>
-                                <div class="col-sm-10">
+                                <label class="col-sm-6">Did you initiate that conversation?</label>
+                                <div class="col-sm-6">
                                   <div class="radio">
                                   {{!-- trigger to  question 9 recommend person?--}}
                                     <label class="radio-inline">
@@ -157,8 +159,8 @@
 
 {{!-- Question 4C --}}
                 <div class="form-group row" id="datingTimes_C" style="display: none">
-                    <label class="col-sm-2">Who ceased communication? Ghosted?</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-6">Who ceased communication? Ghosted?</label>
+                    <div class="col-sm-6">
                       <div class="radio">
                       {{!-- trigger to question 9 recommend person?--}}
                         <label class="radio-inline">
@@ -176,8 +178,8 @@
 {{!-- Question 5 --}}
   {{!-- No toggle --}}
         <div class="form-group row" id="dateNumber" style="display: none">
-            <label class="col-sm-2">How many more times have you hung out?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">How many more times have you hung out?</label>
+            <div class="col-sm-6">
             {{!-- trigger to question 6 any result --}}
                <div class="radio">
                   <label class="radio-inline">
@@ -200,8 +202,8 @@
 {{!-- Question 6 --}}
 {{!-- no toggle --}}
         <div class="form-group row" id="attraction" style="display: none">
-            <label class="col-sm-2">Was there physical attraction on the date?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Was there physical attraction on the date?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to question about sex --}}
                 <label class="radio-inline">
@@ -218,8 +220,8 @@
 
 {{!-- Question 7 --}}
         <div class="form-group row" id="physical" style="display: none">
-            <label class="col-sm-2">Were you physically intimate with this person?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Were you physically intimate with this person?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to question appearance--}}
                 <label class="radio-inline">
@@ -236,8 +238,8 @@
 
 {{!-- Question 8 --}}
         <div class="form-group row" id="appearance" style="display: none">
-            <label class="col-sm-2">Did your date look like the pictures posted in their profile?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Did your date look like the pictures posted in their profile?</label>
+            <div class="col-sm-6">
               <div class="radio">
               {{!-- trigger to question 9 recommend date--}}
                 <label class="radio-inline">
@@ -254,8 +256,8 @@
 
 {{!-- Question 8A --}}
                 <div class="form-group row" id="appearance_A" style="display: none">
-                    <label class="col-sm-2">What was different? Select All That Apply</label>
-                    <div class="col-sm-10">
+                    <label class="col-sm-6">What was different? Select All That Apply</label>
+                    <div class="col-sm-6">
                       <div class="form-check">
                       {{!-- trigger to question 9 any result --}}
                         <label class="form-check-label">
@@ -279,8 +281,8 @@
 
 {{!-- Question 9 --}}
         <div class="form-group row" id="recommendFriend" style="display: none">
-            <label class="col-sm-2">Would you recommend this person to a friend?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">Would you recommend this person to a friend?</label>
+            <div class="col-sm-6">
               <div class="radio">
                 <label class="radio-inline">
                   <input type="radio" name="q9" class="recommend" value="0"> Yes
@@ -296,8 +298,8 @@
 
 {{!-- Nice to know One aka question10 --}}
           <div class="form-group row" id="activity" style="display: none">
-            <label class="col-sm-2">What type of activity(s) did you do on your date?</label>
-            <div class="col-sm-10">
+            <label class="col-sm-6">What type of activity(s) did you do on your date?</label>
+            <div class="col-sm-6">
               <div class="form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="checkbox" value="a"> Active/Exercising/Walking
@@ -319,8 +321,8 @@
 
     {{!-- Topics Discussed/question11 --}}
         <div class="form-group row" id="topics" style="display:none">
-          <label class="col-sm-2">What topics were discussed on your date?</label>
-          <div class="col-sm-10">
+          <label class="col-sm-6">What topics were discussed on your date?</label>
+          <div class="col-sm-6">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" value="p"> Politics
