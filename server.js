@@ -98,6 +98,7 @@ app.use("/local", local);
 
 require("./routes/html-routes.js")(app);
 
+var db = process.env.MONGODB_URI || "mongodb://localhost/thelowdwn";
 
 mongoose.connect(db, function(error){
   if (error){
@@ -113,17 +114,17 @@ mongoose.connect(db, function(error){
 // mongoose.connect("mongodb://heroku_89n03gfl:evsmtsk2gc0eaaml61i16scgr0@ds137261.mlab.com:37261/heroku_89n03gfl");
 // var db = mongoose.connection;
 
-var db = process.env.MONGODB_URI || "mongodb://localhost/thelowdwn";
+
 
 // Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+// db.on("error", function(error) {
+//   console.log("Mongoose Error: ", error);
+// });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+// db.once("open", function() {
+//   console.log("Mongoose connection successful.");
+// });
 
 
 app.listen(port, function() {
