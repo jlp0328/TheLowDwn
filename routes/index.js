@@ -7,7 +7,6 @@ var Review = require("../models/Review");
 var Dater = require("../models/Dater");
 var Story = require("../models/Story");
 
-
 //Get homepage
 router.get("/", function(req, res){
   res.render("index");
