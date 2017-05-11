@@ -167,9 +167,11 @@ app.post("/dateScrape", function(req, res) {
 });
 
 app.post("/:username/review", function(req, res){
+
     var user = req.params.username;
 
     // console.log("testing shittttt", req.body.datername);
+  
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     var datername = req.body.datername;
     console.log(datername);
