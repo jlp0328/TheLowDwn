@@ -130,8 +130,15 @@
 #loginExists {
   position: absolute;
   text-align: center;
-  top: 250px;
-  left: 90px; }
+  top: 370px;
+  left: 110px; }
+
+#name, #email, #username, #password, #confirm, #profilePic {
+  width: 450px; }
+
+.theLowDwn {
+  color: #ae029b;
+  font-weight: bold; }
 
 .appNameLogin {
   font-family: "Monoton", cursive;
@@ -232,6 +239,9 @@
 #storyContent {
   width: 100%;
   height: 500px; }
+
+.blogHeading {
+  color: #ae029b; }
 
 body {
   font-family: "Open Sans Condensed", sans-serif; }

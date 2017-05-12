@@ -27,6 +27,7 @@ router.post("/register", function(req, res){
     var name = (req.body.name).trim();
     var email = (req.body.email).trim();
     var username = (req.body.username).trim();
+    var profilePic = (req.body.profilePic).trim();
     var password = (req.body.password).trim();
     var confirmPassword = (req.body.confirm).trim();
 
@@ -53,6 +54,7 @@ router.post("/register", function(req, res){
         var newUser = new User({
           name: name,
           email: email,
+          image: profilePic,
           username: username,
           password: password
         });
