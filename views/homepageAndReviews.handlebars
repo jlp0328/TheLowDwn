@@ -13,21 +13,21 @@
      <h1 style="" class="searchResults">My Reviews</h1>
 
 {{#each review}}
-{{#if this._id}}
-
+{{!-- {{#if this._id}}
+ --}}
         <div class="card col-md-6" id="daterDiv" style="padding: 30px; text-align: center">
 
-           {{!--  <img class="card-img-top" src="{{this.image}}">
+            <img class="card-img-top" src="{{this.image}}">
               <div class="card-block">
               <p style="font-size: 15px" class="card-title">{{this.username}}</p>
-              <p style="font-size: 15px" class="card-title">{{this.location}}</p>
-              <p style="font-size: 15px" class="card-title">{{this.age}}</p>
+              <p style="font-size: 15px" class="card-title">{{this.score}}</p>
+              <p style="font-size: 15px" class="card-title">{{this.nicety}}</p>
 
               <a data-id="{{this._id}}" class="btn btn-primary">Write Review!</a>
-              </div> --}}
+              </div>
 
         </div>
-  {{/if}}
+  {{!-- {{/if}} --}}
  {{/each}}
 
 

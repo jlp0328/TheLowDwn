@@ -154,8 +154,10 @@ app.post("/dateScrape", function(req, res) {
     var daterInfo = $("div.userinfo2015");
     if(daterInfo.length == 0) {
       console.log("homie don't play dat");
-        req.flash("error_msg", "Please provide a valid username from OkCupid");
+
+      req.flash("error_msg", "Please provide a valid username from OkCupid");
     }
+    
     else {
 
     $("div.userinfo2015").each(function (i, element) {
@@ -291,30 +293,6 @@ app.post("/reviewing", function(req, res) {
 
 
 
-
-//trying to display dating stories from story table: set up in index.js file
-// app.get("/:username/blog", function(req, res) {
-
-//   var query = Story.find({});
-
-//   query.exec(function(error, doc) {
-//     if (error) {
-//       console.log(error);
-//     }
-//     console.log(doc);
-     
-//       // res.render("readstory", {story: doc});
-    
-//   });
-// });
-//end of trying to display dating stories 
-
-
-
-////////////
-////////////////
-
-//Need to see about if user not in db, tell user either check spelling or no reviews made yet..
 
 //////////
 ///////////
