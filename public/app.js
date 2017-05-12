@@ -27,7 +27,7 @@ $(document).on("click", ".findDater", function(e) {
 		$("#daterDiv").empty();
 // removed name of datername, don't think i needed it in html
 		var html = "<p class='card-title' id='daterName' value=" + data.username + ">" + data.username + "</p>" +
-			      "<img class='card-img-top pic' src=" + data.image + ">" +
+			      "<img class='card-img-top pic' id='daterImage' value='" + data.image + "'src=" + data.image + ">" +
 			      "<p id='daterLocation'>" + data.location + "</p>" +
 			      "<p id='daterAge' name='userAge'>" + data.age + "</p>" + "<div class='yesOrNo' style='display:show'>" +
 			      "<p class='lookingFor'>Is this who you were looking for?</p>" +
@@ -49,18 +49,12 @@ $(document).on("click", "#yesDater", function(e) {
 	var daterName = $("#daterName").attr("value");
 	console.log("ClickSubmit: " + daterName);
 
-	$("#inputDatername").attr("value", daterName);
+	var daterImage= $("#daterImage").attr("value");
 
-	// $.ajax({
-	// 	method: "POST",
-	// 	url: "/:username/review",
-	// 	data: {
-	// 		datername: daterName
-	// 	}
-	// })
-	// .done(function(data) {
-	// 	console.log("it worked...");
-	// });
+	$("#inputDatername").attr("value", daterName);
+	$("#inputDaterImage").attr("value", daterImage);
+
+	
 });
 /////////////////////////
 ///////////////

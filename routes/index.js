@@ -16,8 +16,22 @@ router.get("/", function(req, res){
 router.get("/:username", ensureAuthentication, function(req, res){
 
   var login = req.params.username;
+  //set variable in order to have doc set to a more global variable
+  var allStories;
+  
+  var query = Story.find({});
 
-     res.render("homepageAndReviews", {username: login});
+  query.exec(function(error, doc) {
+    if (error) {
+      console.log(error);
+    }
+    console.log(doc);
+     allStories =doc;
+      // res.render("readstory", {story: doc});
+    
+     res.render("homepageAndReviews", {username: login, story: allStories});
+  });
+
 
   });
 
@@ -26,9 +40,8 @@ router.get("/:username/search", function(req, res){
 
    var login = req.params.username;
 
-   var datername = req.body.datername;
 
-  res.render("searchUsername", {username: login, datername: datername});
+  res.render("searchUsername", {username: login});
 
 });
 
@@ -37,9 +50,8 @@ router.get("/:username/review", function(req, res){
 
    var login = req.params.username;
 
-    var datername = req.body.datername;
 
-  res.render("reviewSummary", {username: login, datername: datername});
+  res.render("reviewSummary", {username: login});
 });
 
 //Search for a user in the db to read their reviews

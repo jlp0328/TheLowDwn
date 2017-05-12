@@ -196,6 +196,10 @@ app.post("/:username/review", function(req, res){
 //update variable score once do math
     var score = "75";
 
+    var daterImage = req.body.daterImage;
+
+    console.log("checking looks: ", q8a);
+
         var entry = new Review({
           datername: datername,
             q1: q1,
@@ -215,8 +219,8 @@ app.post("/:username/review", function(req, res){
             q10: q10,
             q11: q11,
             nicety: nicety,
-
-            score: score
+            score: score,
+            image: daterImage
         });
 
         // console.log(newReview);
@@ -225,11 +229,12 @@ app.post("/:username/review", function(req, res){
             if(err) throw err;
             // console.log(review);
 
-        res.render("reviewSummary", {Review: review});
+        res.render("reviewSummary", {review: review});
         req.flash("success_msg", "Your review has been successfully submitted!");
         });
 
 });
+
 
 
 //post dating story to story table
@@ -257,20 +262,21 @@ app.post("/:username/blog", function(req, res) {
 //end of posting dating story
 
 
-//trying to display dating stories from story table
-app.get("/:username/blog", function(req, res) {
+//trying to display dating stories from story table: set up in index.js file
+// app.get("/:username/blog", function(req, res) {
 
-  var query = Story.find({}).sort({$natural: -1}).limit(10);
+//   var query = Story.find({});
 
-  query.exec(function(error, doc) {
-    if (error) {
-      console.log(error);
-    }
+//   query.exec(function(error, doc) {
+//     if (error) {
+//       console.log(error);
+//     }
+//     console.log(doc);
      
-      res.render("readstory", {story: doc});
+//       // res.render("readstory", {story: doc});
     
-  });
-});
+//   });
+// });
 //end of trying to display dating stories 
 
 
