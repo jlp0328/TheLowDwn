@@ -1,18 +1,38 @@
-<div class="container" style="margin-top: 35px">
+<div class="container col-md-6" style="margin-top: 35px">
+
+{{!-- <div class="col-md-6"> --}}
 <h1 style="margin-top: 65px">Review Summary</h1>
 
 
         <div class="card col-md-6" id="storyDiv" style="padding: 30px; text-align: center">
             <h4 class="category">{{review.datername}}</h4>
-         	<img class="card-img-top pic" src={{review.image}}>
+         	  <img class="card-img-top pic" id="summaryImage" src={{review.image}}>
             <p class="story">Something Nice: {{review.nicety}}</p>
             <h4 class="title">Score: {{review.score}}</h4>
 
         </div>
+</div>
 
 
+
+{{!-- </div> --}}
+
+  <div class="jumbotron col-md-6" style="margin-top: 100px">
+        <h1 class="display-3" style="text-align: center">Thank You<br/> for</br> Your Review!</h1>
+        {{!-- <p class="lead">What is <span class="theLowDwn">The LowDwn?</span></p> --}}
+        <hr class="my-2">
+        <p><span class="theLowDwn">The LowDwn.</span> is an application designed to provide online daters objective reviews of other daters on OkCupid. In addition to reviews, we wanted to offer our users the opportunity to share their online dating stories. Everyone loves a good online dating story!</p>
+
+      <p>Use the form to submit your story to<span class="theLowDwn">The Lowdwn.</span> Give your story a fun title, classify it, and then let the good times roll! We want you to be open and honest with your stories, but ask that you do not use this as a forum to <a href="http://www.urbandictionary.com/define.php?term=put%20on%20blast">put someone on blast!</a> <span class="theLowDwn">We ask that you do not use anyone's real name in your post!</span></p>
+
+      <p>Thank you for contributing!</p>
+
+
+      <p>Love, <span class="theLowDwn">The LowDwn. Team</span></p>
 
 </div>
+
+
 
 
 

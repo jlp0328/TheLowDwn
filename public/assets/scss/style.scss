@@ -7,6 +7,7 @@
 @import "login";
 @import "search";
 @import "blog";
+@import "reviewSummary";
 
 body{
   font-family: $body-font;
@@ -58,6 +59,16 @@ h1 {
 h2 {
 
    font-size: 40px;
+
+}
+
+#enterOkCupidUN {
+  font-size: 18px;
+
+}
+
+#lookupUser {
+  font-size: 18px;
 
 }
 

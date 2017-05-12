@@ -238,10 +238,17 @@
 
 #storyContent {
   width: 100%;
-  height: 500px; }
+  height: 523px; }
 
 .blogHeading {
   color: #ae029b; }
+
+#tellUsStory, #title, #category {
+  font-size: 24px; }
+
+#summaryImage {
+  height: 300px;
+  width: 300px; }
 
 body {
   font-family: "Open Sans Condensed", sans-serif; }
@@ -280,5 +287,11 @@ h1 {
 
 h2 {
   font-size: 40px; }
+
+#enterOkCupidUN {
+  font-size: 18px; }
+
+#lookupUser {
+  font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */
