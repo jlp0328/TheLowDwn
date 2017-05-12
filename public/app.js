@@ -74,21 +74,22 @@ $(document).on("click", ".findReview", function(e) {
 			datername: daterName
 		}
 	}).done(function(data) {
-		// console.log(data);
-		console.log(data[0].datername);
+		// console.log(data[0].datername);
 
+		// console.log(data);
+
+		if (data.length == 0) {
+			html = "<p class='card-title'>No Reviews Submitted</p>";
+			
+		}
+		//loop through the array to get the rest of info
+		else {
 		var datername = data[0].datername;
 		var daterImage = data[0].image;
 		var score=[];
 		var sum;
 		var html;
 		var niceThings=[];
-
-		//loop through the array to get the rest of info
-		if (datername == undefined) {
-			html = "<p class='card-title'>" + datername + ": No Reviews Submitted</p>";
-		}
-		else {
 
 			for (var i = 0; i < data.length; i ++) {
 				score.push(data[i].score);
@@ -109,6 +110,8 @@ $(document).on("click", ".findReview", function(e) {
 
 
 		$("#reviewDiv").append(html);
+		$("#readReviewSearch").val("");
+
 
 	});
 });
