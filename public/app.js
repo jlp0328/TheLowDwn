@@ -62,6 +62,7 @@ $(document).on("click", "#yesDater", function(e) {
 
 $(document).on("click", ".findReview", function(e) {
 	e.preventDefault();
+	$("#reviewDiv").empty();
 
 	var daterName = $("#readReviewSearch").val().trim();
 	console.log("reviewUserNameInput: ", daterName);
@@ -73,8 +74,41 @@ $(document).on("click", ".findReview", function(e) {
 			datername: daterName
 		}
 	}).done(function(data) {
-		console.log(data.datername + data.score)
-		$("#reviewDiv").append("Something here");
+		// console.log(data);
+		console.log(data[0].datername);
+
+		var datername = data[0].datername;
+		var daterImage = data[0].image;
+		var score=[];
+		var sum;
+		var html;
+		var niceThings=[];
+
+		//loop through the array to get the rest of info
+		if (datername == undefined) {
+			html = "<p class='card-title'>" + datername + ": No Reviews Submitted</p>";
+		}
+		else {
+
+			for (var i = 0; i < data.length; i ++) {
+				score.push(data[i].score);
+				niceThings.push("<p>" + data[i].nicety + "</p>");
+
+			}//end of for loop
+//taking average of scores
+		  sum = score.reduce(function(a, b) {
+		  	return a + b;
+		  })/score.length;
+
+		  html = "<p class='card-title'>" + datername + "</p>" +
+			      "<img class='card-img-top pic' src=" + daterImage + ">" +
+			      "<p>Score: " + sum + "</p>" +
+			      "<p>Some Nice Things said about " + datername + ": " + niceThings; 
+
+		}//end of else
+
+
+		$("#reviewDiv").append(html);
 
 	});
 });

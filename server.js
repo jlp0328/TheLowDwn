@@ -272,18 +272,19 @@ app.post("/:username/blog", function(req, res) {
 });
 //end of posting dating story
 
-//using datername to search in daterbase for dater
+//using datername to search in daterbase for dater and sending info to app.js fn
 app.post("/reviewing", function(req, res) {
 
   var datername = req.body.datername;
 
   console.log("reviewDatername: ", datername);
 
-  Review.find({"datername":datername}).exec(function(error, doc) {
+  Review.find({datername:datername}).exec(function(error, doc) {
     if (error) {
     console.log(error);
     }
-    console.log("doc: ", doc.datername);
+    // console.log(doc);
+    // console.log("doc: ", doc[0].datername);
     res.send(doc);
   });
 });
