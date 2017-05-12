@@ -58,24 +58,27 @@ $(document).on("click", "#yesDater", function(e) {
 });
 /////////////////////////
 ///////////////
-//on click for searching for user to read reviews
+//getting datername from input field on search for existing dater
 
-// $(document).on("click", ".findReview", function(e) {
-// 	e.preventDefault();
+$(document).on("click", ".findReview", function(e) {
+	e.preventDefault();
 
-// 	var daterName = ("#readReviewSearch").val().trim();
+	var daterName = $("#readReviewSearch").val().trim();
+	console.log("reviewUserNameInput: ", daterName);
 
-// 	$.ajax({
-// 		method: "POST",
-// 		url: "/read",
-// 		data: {
-// 			username: daterName
-// 		}
-// 	}).done(function(data) {
-// 		$("#readReviewSearch").val("");
-// 		//do some stuff with the data maybe or see if handlebars can take care of it to render existing reviews
-// 	});
-// });
+	$.ajax({
+		method: "POST",
+		url: "/reviewing",
+		data: {
+			datername: daterName
+		}
+	}).done(function(data) {
+		console.log(data.datername + data.score)
+		$("#reviewDiv").append("Something here");
+
+	});
+});
+
 /////////////////
 //////////
 

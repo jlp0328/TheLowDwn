@@ -25,7 +25,7 @@ router.get("/:username", ensureAuthentication, function(req, res){
     if (error) {
       console.log(error);
     }
-    console.log(doc);
+    // console.log(doc);
      allStories =doc;
       // res.render("readstory", {story: doc});
     

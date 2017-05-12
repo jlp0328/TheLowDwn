@@ -184,9 +184,6 @@ app.post("/:username/review", function(req, res){
 
     var user = req.params.username;
 
-    // console.log("testing shittttt", req.body.datername);
-
-//datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     var datername = req.body.datername;
     console.log("PLEASE WORK: ", datername);
 
@@ -275,6 +272,24 @@ app.post("/:username/blog", function(req, res) {
 });
 //end of posting dating story
 
+//using datername to search in daterbase for dater
+app.post("/reviewing", function(req, res) {
+
+  var datername = req.body.datername;
+
+  console.log("reviewDatername: ", datername);
+
+  Review.find({"datername":datername}).exec(function(error, doc) {
+    if (error) {
+    console.log(error);
+    }
+    console.log("doc: ", doc.datername);
+    res.send(doc);
+  });
+});
+
+
+
 
 //trying to display dating stories from story table: set up in index.js file
 // app.get("/:username/blog", function(req, res) {
@@ -297,21 +312,9 @@ app.post("/:username/blog", function(req, res) {
 
 ////////////
 ////////////////
-//get reviews on a dater
-//not sure if the Review: doc will work. not sure how doc will come out, in news one we had it go to another route but this one we will be showing results to same page..maybe can use handlebars to handle this doc.
+
 //Need to see about if user not in db, tell user either check spelling or no reviews made yet..
 
-// app.post("/read", function(req, res) {
-//   var daterName = req.body.username;
-//   Review.find({ username: daterName }).exec(function(error, doc) {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       res.render("searchExistingReviews", { Review: doc });
-//     }
-//   });
-
-// });
 //////////
 ///////////
 //get reviews for user signed in...url router may not be correct
