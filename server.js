@@ -98,19 +98,33 @@ app.use("/local", local);
 
 require("./routes/html-routes.js")(app);
 
+var db = process.env.MONGODB_URI || "mongodb://localhost/thelowdwn";
 
-mongoose.connect("mongodb://localhost/thelowdwn");
-var db = mongoose.connection;
+mongoose.connect(db, function(error){
+  if (error){
+    console.log(error);
+  } else {
+
+    console.log("Working!!!!!")
+  }
+
+});
+// var db = mongoose.connection;
+
+// mongoose.connect("mongodb://heroku_89n03gfl:evsmtsk2gc0eaaml61i16scgr0@ds137261.mlab.com:37261/heroku_89n03gfl");
+// var db = mongoose.connection;
+
+
 
 // Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+// db.on("error", function(error) {
+//   console.log("Mongoose Error: ", error);
+// });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+// db.once("open", function() {
+//   console.log("Mongoose connection successful.");
+// });
 
 
 app.listen(port, function() {
@@ -171,7 +185,7 @@ app.post("/:username/review", function(req, res){
     var user = req.params.username;
 
     // console.log("testing shittttt", req.body.datername);
-  
+
 //datername not being recognized....need to figure that out but if hardcode in a value it goes to db
     var datername = req.body.datername;
     console.log("PLEASE WORK: ", datername);
@@ -249,7 +263,7 @@ app.post("/:username/blog", function(req, res) {
       username: username,
       category: category,
       title: title,
-      story: story 
+      story: story
     });
 
     entry.save(function (err, doc) {
@@ -278,6 +292,7 @@ app.post("/:username/blog", function(req, res) {
 //   });
 // });
 //end of trying to display dating stories 
+
 
 
 ////////////
