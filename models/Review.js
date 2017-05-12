@@ -87,6 +87,10 @@ var ReviewSchema = new Schema ({
 		type: String,
 		require: false
 		// will be calculated so may be required
+	},
+	image: {
+		type: String,
+		require: false
 	}
 });
 
