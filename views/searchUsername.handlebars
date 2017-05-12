@@ -6,8 +6,9 @@
 {{!-- Search for OkCupid User to Write Review --}}
 <form>
   <div class="form-group">
-    <label for="formGroupExampleInput">Enter OkCupid Username</label>
+    <label for="formGroupExampleInput" id="enterOkCupidUN">Enter OkCupid Username</label>
     <input type="text" class="form-control" id="writeReviewSearch" placeholder="OkCupid Username" style="width: 350px">
+    <a href="https://www.okcupid.com/home" id="lookupUser" target="_blank">I can't remember their username!</a>
   </div>
 
   <button type="button" class="btn btn-primary btn-lg outline findDater">Find User to Review</button>
@@ -29,7 +30,7 @@
       <input type="hidden" id="inputDatername" name="datername" value="">
       <input type="hidden" id="inputDaterImage" name="daterImage" value="">
 
-    
+
 
 {{!-- Question One --}}
     <div class="form-group">
@@ -465,13 +466,13 @@
             </div>
           </div>
         </div>
-       
+
         <div class="form-group niceInput" style="display: none">
             <label for="name" class="cols-sm-2 control-label">Say Something Nice about the date/person: </label>
                 <div class="cols-sm-10">
                     <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="nice" id="randomNice"  placeholder="Enter your short and sweet nice thing"/>
+                    <input type="text" class="form-control" name="nice" id="randomNice"  placeholder="Enter your short and sweet nice thing... you have 150 characters!" maxlength="150" />
                 </div>
               </div>
             <br></br>

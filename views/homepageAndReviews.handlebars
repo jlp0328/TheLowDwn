@@ -37,13 +37,15 @@
 
 {{!-- adding in a temp div just to see if stories work and no page set up yet --}}
   <div class="container col-md-6" style="margin-top: 65px">
-     <h1 style="" class="storyResults">Dating Stories</h1>
+     <h1 style="" class="storyResults">The Latest Stories on TheLowDwn.</h1>
 
 {{#each story}}
 
-        <div class="card col-md-6" id="storyDiv" style="padding: 30px; text-align: center">
-            <h4 class="category">{{this.category}}</h4>
-            <h4 class="title">{{this.title}}</h4>
+        <div class="col-md-6" id="storyDiv" style="padding: 30px; text-align: center">
+
+            <h2 class="title">{{this.title}}</h4>
+            <h4 class="category">Category: {{this.category}}</h4>
+
             <p class="story">{{this.story}}</p>
 
         </div>
