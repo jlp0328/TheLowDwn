@@ -14,39 +14,51 @@ router.get("/", function(req, res){
 
 //User Dashboard that has access to their personal reviews
 router.get("/:username", ensureAuthentication, function(req, res){
+
   var login = req.params.username;
+  console.log(login)
   //set variable in order to have doc set to a more global variable
   var allStories;
   var userReview;
+  var userId;
   // var userId;
 
 //variable for find all stories in story table
   var query = Story.find({});
 
- /////////////// 
+ ///////////////
 // //////testing to get userID from user table to use in the review table?
 User.findOne({username: login}).exec(function(error, doc) {
-  if (error) {
-      console.log(error);
+
+        if (error) {
+            console.log(error);
+        }
+        else {
+
+        console.log("this is the doc:" + doc);
+        userId = doc._id;
+        console.log("userID", userId);
   }
-  else {
-    
-  console.log(doc);
-  var userId = doc._id;
-  console.log("userID", userId);
-  }
 
-});
+ });
+// closing findOne
 
 
-  // var userId = req.body.id;
-  // Review.find({"_id": userId}).exec(function(error, doc) {
-  //   if (error) {
-  //     console.log(error);
-  //   }
-  //   userReview = doc;
-    
-  // });
+  // var userId = req.body._id;
+  // console.log(userId);
+
+  Review.find({"_id": userId})
+
+      .populate("creator")
+
+      .exec(function(error, doc) {
+        if (error) {
+          console.log(error);
+        }
+        userReview = doc;
+        console.log(doc.creator)
+
+      });
 // /////end testing
 //////////////
 
@@ -58,12 +70,13 @@ User.findOne({username: login}).exec(function(error, doc) {
     }
     // console.log(doc);
      allStories = doc;
-      // res.render("readstory", {story: doc});   
+      // res.render("readstory", {story: doc});
      res.render("homepageAndReviews", {username: login, story: allStories});
   });
 
 
   });
+
 
 //Search users to write dater reviews
 router.get("/:username/search", function(req, res){
