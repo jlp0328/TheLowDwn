@@ -10,11 +10,11 @@ var DaterSchema = new Schema ({
 	},
 	location: {
 		type: String,
-		required: false
+		required: true
 	},
 	age: {
-		type: Integer,
-		required: false
+		type: String,
+		required: true
 	},
 	image: {
 		type: String,

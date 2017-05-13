@@ -1,0 +1,508 @@
+
+<div class="container col-md-6 searchField" style="margin-top: 65px" display="show">
+
+<h1>Search</h1>
+
+{{!-- Search for OkCupid User to Write Review --}}
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput" id="enterOkCupidUN">Enter OkCupid Username</label>
+    <input type="text" class="form-control" id="writeReviewSearch" placeholder="OkCupid Username" style="width: 350px">
+    <a href="https://www.okcupid.com/home" id="lookupUser" target="_blank">I can't remember their username!</a>
+  </div>
+
+  <button type="button" class="btn btn-primary btn-lg outline findDater">Find User to Review</button>
+
+</form>
+
+</div>
+{{!-- Closing Search Box --}}
+
+
+{{!-- Hidden div with questions --}}
+<div class="container reviewDate col-md-6" style="display: none; margin-top: 65px">
+
+    <h1>Give Us The LowDwn.</h1>
+
+    <form method="post" action="/{{username}}/review">
+
+{{!-- hidden input for datername to be taken with form submission --}}
+      <input type="hidden" id="inputDatername" name="datername" value="">
+      <input type="hidden" id="inputDaterImage" name="daterImage" value="">
+
+
+
+{{!-- Question One --}}
+    <div class="form-group">
+        <div class="form-group row" id="correspond" style="margin-top: 10px">
+            <label class="col-md-6" id="questionLabel">Did you correspond with this person?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q1" id="talkYes" value="yes"> Yes
+                </label>
+                {{!-- have a trigger for this question to end it since --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q1" id="talkNo" value="no" > No, we've never messaged
+                </label>
+
+              </div>
+            </div>
+        </div>
+    </div>
+    {{!-- Closing Q1 --}}
+
+{{!-- Question Two --}}
+{{!-- don't have a toggle because either way move to next question --}}
+        <div class="form-group row" id="initiate" style="display: none">
+            <label class="col-md-6" id="questionLabel" >Did you initiate the intitial conversation?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+              {{!-- put a class on the buttons because it doesn't matter what answer is --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q2" class="initiated" value="yes"> Yes
+                </label>
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q2" class="initiated" value="no"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q2 --}}
+
+{{!-- Question Three --}}
+        <div class="form-group row" id="inPerson" style="display: none">
+            <label class="col-md-6" id="questionLabel">Did you meet in person?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q3" id="metYes" value="yes"> Yes
+                </label>
+                {{!-- have a trigger for this question to end it since never met --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q3" id="neverMet" value="no"> No, we've never met
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q3 --}}
+
+{{!-- Question Four --}}
+        <div class="form-group row" id="datingTimes" style="display: none">
+            <label class="col-md-6" id="questionLabel">Did you go out on more than one date?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to next question --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q4" id="dateMultiple" value="yes"> Yes
+                </label>
+              {{!-- trigger to Four A --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q4" id="dateOnce" value="yes"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q4 --}}
+
+{{!-- Question Four A --}}
+                <div class="form-group row" id="datingTimes_A" style="display: none">
+                    <label class="col-md-6" id="questionLabel">Are you planning to meet again?</label>
+                    <div class="col-md-6">
+                      <div class="radio">
+                      {{!-- trigger to question five --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4a" id="dateAgain" value="yes"> Yes
+                        </label>
+                      {{!-- trigger to next sub question --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4a" id="dateAgainNo" value="no"> No
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                {{!-- Closing Q4 A --}}
+
+{{!-- Question 4B --}}
+                <div class="form-group row" id="datingTimes_B" style="display: none">
+                    <label class="col-md-6" id="questionLabel">Did you have a conversation about not seeing each other again?</label>
+                    <div class="col-md-6">
+                      <div class="radio">
+                      {{!-- trigger to  4B_1--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4b" id="conversationYes" value="0"> Yes
+                        </label>
+                      {{!-- trigger to 4C --}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4b" id="conversationNo" value="5"> No
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                {{!-- Closing Q4 B --}}
+
+{{!-- Question4B_1 --}}
+         {{!-- no toggle --}}
+                            <div class="form-group row" id="datingTimes_B_1" style="display: none">
+                                <label class="col-md-6" id="questionLabel">Did you initiate that conversation?</label>
+                                <div class="col-md-6">
+                                  <div class="radio">
+                                  {{!-- trigger to  question 9 recommend person?--}}
+                                    <label class="radio-inline">
+                                      <input type="radio" name="q4b1" class="end" id="q4b_1_yes" value="yes"> Yes
+                                    </label>
+                                  {{!-- trigger to question 9 recommend person?--}}
+                                    <label class="radio-inline">
+                                      <input type="radio" name="q4b1" class="end" id="q4b_1_no" value="no"> No
+                                    </label>
+                                  </div>
+                                </div>
+                            </div>
+
+{{!-- Question 4C --}}
+                <div class="form-group row" id="datingTimes_C" style="display: none">
+                    <label class="col-md-6" id="questionLabel">Who ceased communication? Ghosted?</label>
+                    <div class="col-md-6">
+                      <div class="radio">
+                      {{!-- trigger to question 9 recommend person?--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4c" class="end" id="ghostedThem" value="0"> I did. I ghosted that mofo
+                        </label>
+                      {{!-- trigger to question 9 recommend person?--}}
+                        <label class="radio-inline">
+                          <input type="radio" name="q4c" class="end" id="ghostedMe" value="5"> They did. They probably think I'm #sterile.
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                {{!-- Closing Q4 C --}}
+
+{{!-- Question 5 --}}
+  {{!-- No toggle --}}
+        <div class="form-group row" id="dateNumber" style="display: none">
+            <label class="col-md-6" id="questionLabel">How many more times have you hung out?</label>
+            <div class="col-md-6">
+            {{!-- trigger to question 6 any result --}}
+               <div class="radio">
+                  <label class="radio-inline">
+                    <input type="radio" name="q5" class="q5" value="a"> 1-3
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="q5" class="q5" value="b"> 4-6
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="q5" class="q5" value="c"> 7-10
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="q5" class="q5" value="d"> We are still hanging out
+                  </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q5 --}}
+
+{{!-- Question 6 --}}
+{{!-- no toggle --}}
+        <div class="form-group row" id="attraction" style="display: none">
+            <label class="col-md-6" id="questionLabel">Was there physical attraction on the date?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q6" class="attracted" value="yes"> Yes
+                </label>
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q6" class="attracted" value="no"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Close Q6 --}}
+
+{{!-- Question 7 --}}
+        <div class="form-group row" id="physical" style="display: none">
+            <label class="col-md-6" id="questionLabel">Were you physically intimate with this person?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to question appearance--}}
+                <label class="radio-inline">
+                  <input type="radio" name="q7" class="intimate" value="yes"> Yes
+                </label>
+              {{!-- trigger to question about sex --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q7" class="intimate" value="no"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Close Q7 --}}
+
+{{!-- Question 8 --}}
+        <div class="form-group row" id="appearance" style="display: none">
+            <label class="col-md-6" id="questionLabel">Did your date look like the pictures posted in their profile?</label>
+            <div class="col-md-6">
+              <div class="radio">
+              {{!-- trigger to question 9 recommend date--}}
+                <label class="radio-inline">
+                  <input type="radio" name="q8" id="fitProfileYes" value="0"> Yes
+                </label>
+              {{!-- trigger to question about difference --}}
+                <label class="radio-inline">
+                  <input type="radio" name="q8" id="fitProfileNo" value="1"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q8 --}}
+
+{{!-- Question 8A --}}
+                <div class="form-group row" id="appearance_A" style="display: none">
+                    <label class="col-md-6" id="questionLabel">What was different? Select All That Apply</label>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                      {{!-- trigger to question 9 any result --}}
+                        <label class="form-check-label">
+{{!--                           <input class="checkbox-inline" type="checkbox" value="1">Shorter in person
+                          <input class="checkbox-inline" type="checkbox" value="1">Taller in person
+
+                          <input class="checkbox-inline" type="checkbox" value="1">Weighed significantly more
+                          <input class="checkbox-inline" type="checkbox" value="1">Weighed significantly less
+                          <input class="checkbox-inline" type="checkbox" value="1">A lot less hair
+                          <input class="checkbox-inline" type="checkbox" value="1">Looked older
+                          <input class="checkbox-inline" type="checkbox" value="1">Looked younger
+                          <input class="checkbox-inline" type="checkbox" value="1">Actually were older
+                          <input class="checkbox-inline" type="checkbox" value="1">Actually were younger
+                          <input class="checkbox-inline" type="checkbox" value="1">Better looking!
+
+                          <input class="checkbox-inline" type="checkbox" id="attributes">Did you select everything you wanted to? --}}
+
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" shorter in person">Shorter in person</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" taller in person">Taller in person</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" weighed significantly more">Weighed significantly more</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" weighed significantly less">Weighed significantly less</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" a lot less hair">A lot less hair</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" looked older">Looked older</label>
+                    </div>
+
+                     <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" looked younger">Looked younger</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" actually were older">Actually were older</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" actually were younger">Actually were younger</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q8a" value=" better looking">Better looking!</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label style="margin-top: 30px"><input type="checkbox" id="attributes">Click here to proceed to the next question.</label>
+                    </div>
+
+
+
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                {{!-- Closing 8A --}}
+
+{{!-- Question 9 --}}
+        <div class="form-group row" id="recommendFriend" style="display: none">
+            <label class="col-md-6" id="questionLabel">Would you recommend this person to a friend?</label>
+            <div class="col-md-6">
+              <div class="radio">
+                <label class="radio-inline">
+                  <input type="radio" name="q9" class="recommend" value="0"> Yes
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="q9" class="recommend" value="10"> No
+                </label>
+              </div>
+            </div>
+        </div>
+        {{!-- Closing Q9 --}}
+
+
+{{!-- Nice to know One aka question10 --}}
+          <div class="form-group row" id="activity" style="display: none">
+            <label class="col-md-6" id="questionLabel">What type of activity(s) did you do on your date?</label>
+            <div class="col-md-6">
+              <div class="form-check">
+                <label class="form-check-label">
+{{!--                   <input class="checkbox-inline" type="checkbox" value="a"> Active/Exercising/Walking
+                  <input class="checkbox-inline" type="checkbox" value="b"> Drinks
+                  <input class="checkbox-inline" type="checkbox" value="c"> Grabbed Food
+                  <input class="checkbox-inline" type="checkbox" value="d"> Attended a Sporting Event/Concert
+                  <input class="checkbox-inline" type="checkbox" value="e"> "Netflix and Chill"
+                  <input class="checkbox-inline" type="checkbox" value="f"> Hung out with their friends
+                  <input class="checkbox-inline" type="checkbox" value="g"> Hung out with their family
+                  <br/> --}}
+{{!--                   <input class="checkbox-inline" type="checkbox" id="dateActivity"> Did you make all of the selections you wanted to? --}}
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" active/excercising/walking">Active/Exercising/Walking</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" drinks">Drinks</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" grabbed food">Grabbed Food</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" attended a sporting event/concert">Attended a Sporting Event/Concert</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" Netflix and Chill">"Netflix and Chill"</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" hung out with their friends">Hung out with their friends</label>
+                    </div>
+
+                     <div class="checkbox">
+                      <label><input type="checkbox" name="q10" value=" hung out with their family">Hung out with their family</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label style="margin-top: 30px"><input type="checkbox" id="dateActivity">Click here to proceed to the next question.</label>
+                    </div>
+
+                </label>
+              </div>
+            </div>
+          </div>
+
+
+
+          {{!-- Nice to know One/question10 closing --}}
+
+
+    {{!-- Topics Discussed/question11 --}}
+        <div class="form-group row" id="topics" style="display:none">
+          <label class="col-md-6" id="questionLabel">What topics were discussed on your date?</label>
+          <div class="col-md-6">
+            <div class="form-check">
+              <label class="form-check-label">
+{{!--                 <input class="checkbox-inline" type="checkbox" value="p"> Politics
+                <input class="checkbox-inline" type="checkbox" value="m"> Marriage/Kids
+                <input class="checkbox-inline" type="checkbox" value="i"> Income
+                <input class="checkbox-inline" type="checkbox" value="c"> Career
+                <input class="checkbox-inline" type="checkbox" value="r"> Religion
+                <input class="checkbox-inline" type="checkbox" value="b"> Bucket List
+                <input class="checkbox-inline" type="checkbox" value="t"> Travel
+                <input class="checkbox-inline" type="checkbox" value="pr"> Past Relationships
+                <input class="checkbox-inline" type="checkbox" id="dateTopics"> Temp Click once done --}}
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" politics">Politics</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" marriage/kids">Marriage/Kids</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" income">Income</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" career">Career</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" religion">Religion</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" bucket list">Bucket List</label>
+                    </div>
+
+                     <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" travel">Travel</label>
+                    </div>
+
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="q11" value=" past relationships">Past Relationships</label>
+                    </div>
+
+
+                    <div class="checkbox">
+                      <label style="margin-top: 30px"><input type="checkbox" id="dateTopics">Click here to proceed to the next question.</label>
+                    </div>
+
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group niceInput" style="display: none">
+            <label for="name" class="cols-sm-2 control-label">Say Something Nice about the date/person: </label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="nice" id="randomNice"  placeholder="Enter your short and sweet nice thing... you have 150 characters!" maxlength="150" />
+                </div>
+              </div>
+            <br></br>
+        <button type="submit" class="btn btn-primary btn-lg outline reviewSubmit">Submit</button>
+          </div>
+
+
+
+
+</form>
+
+</div>
+{{!-- Closing container with all questions --}}
+
+
+{{!-- Div with search results that will be appended via scrape --}}
+<div class="container col-md-6" style="margin-top: 65px">
+
+    <h2 style="text-align: center" class="searchResults">Search Results</h2>
+
+    {{!-- <img src="../assets/images/okcupid.png" /> --}}
+
+      {{#if error}}
+        {{#each}}
+        <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+      {{/if}}
+
+        <div class="card" id="daterDiv" style="text-align: center">
+
+
+        </div>
+</div>

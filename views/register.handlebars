@@ -1,0 +1,139 @@
+
+    <div class="container col-md-6" style="margin-top: 65px">
+      <div class="row main">
+        <div class="panel-heading" style="margin-right: 100px" >
+                 <div class="panel-title text-center">
+                    <h1 class="title">Register for The LowDwn.</h1>
+                    <hr />
+                  </div>
+              </div>
+
+        {{#if errors}}
+          {{#each errors}}
+          <div class="alert alert-danger">{{msg}}</div>
+          {{/each}}
+          {{/if}}
+
+        <div class="main-login main-center">
+          <form class="form-horizontal" enctype="multipart/form-data" method="post" action="/local/register">
+
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Your Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your name"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Your Email</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your email"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your username"/>
+                </div>
+              </div>
+            </div>
+
+{{!--             <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Profile Pic URL</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="profilePic" id="profilePic"  placeholder="Enter a link to what you'd like your profile picture to be..."/>
+                </div>
+              </div>
+            </div> --}}
+
+
+            <label for="image" class="cols-sm-2 control-label">Profile Pic URL</label>
+              <input type="file" class="custom-file-input" name="profilePic" id="profilePic">
+              <span class="custom-file-control"></span>
+            </label>
+
+
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your password"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm password"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group ">
+{{!--               <button type="button" class="btn btn-primary btn-lg btn-block login-button" >Register</button> --}}
+            <button type="submit" class="btn btn-primary btn-lg outline" style="margin-left: 15px" >Register</button>
+            </div>
+
+          </form>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  <div class="jumbotron col-md-6" style="margin-top: 100px">
+        <h1 class="display-3" style="text-align: center">Welcome<br/> to<br/>The LowDwn.</h1>
+        {{!-- <p class="lead">What is <span class="theLowDwn">The LowDwn?</span></p> --}}
+        <hr class="my-2">
+        <p><span class="theLowDwn">The LowDwn.</span> is an application designed to provide online daters objective reviews of other daters on OkCupid. You'll be asked a series of questions to give other daters <span class="theLowDwn">The LowDwn.</span> on your experiences. The idea is not to slander daters, but to prevent hearts from being broken or help you find your one true love!
+      </p>
+
+      <ul class="useCases-ul"> You can use <span class="theLowDwn">The Lowdwn.</span> to:
+
+      <li class="useCases">Read reviews of other daters (or even those about you!),</li>
+      <li class="useCases">Write reviews about past or current daters, or...</li>
+      <li class="useCases">Give us <span class="theLowDwn">The LowDwn.</span> on your dating experiences. We want to hear your stories!</li>
+
+      </ul>
+
+      <p>Love, <span class="theLowDwn">The LowDwn. Team</span></p>
+
+</div>
+
+{{!--     <div class="container col-md-6">
+
+    <div> --}}
+
+{{!--       <a type="button" href="/local/login" class="btn btn-primary btn-lg outline" id="loginExists">Whoops! I already have a username and password!</a> --}}
+
+      {{!-- <span class="appNameRP animated fadeInDown" style="margin-left: 25px">The LowDwn.</span> --}}
+
+{{!--       <span class="appNameTwoRP animated fadeOutDown" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameThreeRP animated fadeOutDown" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameFourRP animated fadeOutDown" style="margin-left: 25px">The LowDwn.</span>
+
+      <span class="appNameFiveRP animated fadeOutDown" style="margin-left: 25px">The LowDwn.</span> --}}
+
+{{!--     </div>
+
+    </div> --}}

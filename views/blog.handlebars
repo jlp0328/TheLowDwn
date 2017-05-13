@@ -1,0 +1,54 @@
+<div class="container col-md-6" style="margin-top: 65px">
+
+     <h1 style="" class="blogHeading">Give Us TheLowDwn.</h1>
+
+  <form method="post" action="/{{username}}/blog">
+
+    <div class="form-group">
+      <label for="name" class="cols-sm-2 control-label" id="title" style="padding-bottom: 10px">Story Title</label>
+          <div class="cols-sm-10">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="storyTitle" id="storyTitle"  placeholder="Enter your story title"/>
+          </div>
+        </div>
+    </div>
+
+  <label for="name" class="cols-sm-2 control-label" id="category" style="padding-bottom: 10px; padding-right: 12px">Story Category</label>
+  <select class="custom-select" name="storyCategory" id="storyCategory">
+      <option selected >How would you classify your story?</option>
+      <option value="Dating Disaster">Dating Disaster</option>
+      <option value="We Found Love in a Hopeless Place">We Found Love in a Hopeless Place</option>
+      <option value="Other">Other</option>
+  </select>
+
+      <div class="form-group">
+      <label for="name" class="cols-sm-2 control-label" id="tellUsStory" style="padding-bottom: 10px; padding-top: 10px">Tell Us Your Story</label>
+          <div class="cols-sm-10">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <textarea type="text" class="form-control" name="storyContent" id="storyContent"/></textarea>
+          </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg outline">Submit</button>
+
+
+  </form>
+</div>
+
+  <div class="jumbotron col-md-6" style="margin-top: 100px">
+        <h1 class="display-3" style="text-align: center">We Want<br/>Your Dating<br/>Stories</h1>
+        {{!-- <p class="lead">What is <span class="theLowDwn">The LowDwn?</span></p> --}}
+        <hr class="my-2">
+        <p><span class="theLowDwn">The LowDwn.</span> is an application designed to provide online daters objective reviews of other daters on OkCupid. In addition to reviews, we wanted to offer our users the opportunity to share their online dating stories. Everyone loves a good online dating story!</p>
+
+      <p>Use the form to submit your story to<span class="theLowDwn">The Lowdwn.</span> Give your story a fun title, classify it, and then let the good times roll! We want you to be open and honest with your stories, but ask that you do not use this as a forum to <a href="http://www.urbandictionary.com/define.php?term=put%20on%20blast">put someone on blast!</a> <span class="theLowDwn">We ask that you do not use anyone's real name in your post!</span></p>
+
+      <p>Thank you for contributing!</p>
+
+
+      <p>Love, <span class="theLowDwn">The LowDwn. Team</span></p>
+
+</div>

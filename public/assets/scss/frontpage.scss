@@ -1,0 +1,46 @@
+
+.appName{
+  @include titlePageName;
+  color: $purple;
+  bottom: 150px;
+}
+
+.appNameTwo{
+  @include titlePageName;
+    color: darken($purple, 80%);
+    // color: lighten($button-color, 100%);
+    bottom: 200px
+}
+
+.appNameThree{
+  @include titlePageName;
+  color: darken($purple, 70%);
+  // color: lighten($button-color, 80%);
+  bottom: 250px;
+}
+
+.appNameFour{
+  @include titlePageName;
+  color: darken($purple, 60%);
+  // color: lighten($button-color, 60%);
+  bottom: 300px;
+}
+
+.appNameFive{
+  @include titlePageName;
+  color: darken($purple, 50%);
+  // color: lighten($button-color, 40%);
+  bottom: 350px;
+}
+
+.frontPageButtons{
+  position: absolute;
+  bottom: 100px;
+
+
+}
+
+.newUserButton{
+  margin-left: 35px;
+
+}

@@ -8,13 +8,22 @@ var StorySchema = new Schema ({
 		type: String,
 		required: true
 	},
+
+	category: {
+		type: String,
+		required: true
+	},
+
+	title: {
+		type: String,
+		required: true
+	},
 	//look into validators for max length.
 	story: {
 		type: String,
 		required: true
 	}
-	
-	//would be linked to User schema
+
 });
 
 var Story = mongoose.model("Story", StorySchema);

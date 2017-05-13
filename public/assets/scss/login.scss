@@ -1,0 +1,48 @@
+@import "variables";
+
+.appNameLogin{
+  @include registrationPageName;
+  color: $purple;
+  top: 65px;
+  left: 50px;
+}
+
+.appNameTwoLogin{
+  @include registrationPageName;
+    color: darken($purple, 80%);
+    // color: lighten($button-color, 100%);
+    top: 250px;
+    left: 50px;
+}
+
+.appNameThreeLogin{
+  @include registrationPageName;
+  color: darken($purple, 70%);
+  // color: lighten($button-color, 80%);
+  top: 200px;
+  left: 50px;
+}
+
+.appNameFourLogin{
+  @include registrationPageName;
+  color: darken($purple, 60%);
+  // color: lighten($button-color, 60%);
+  top: 150px;
+  left: 50px;
+}
+
+.appNameFiveLogin{
+  @include registrationPageName;
+  color: darken($purple, 50%);
+  // color: lighten($button-color, 40%);
+  top: 100px;
+  left: 50px;
+}
+
+#needToRegister {
+  position: absolute;
+  text-align: center;
+  top: 250px;
+  left: 90px;
+
+}

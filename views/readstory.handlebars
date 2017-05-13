@@ -1,0 +1,41 @@
+
+<div class="card col-md-6">
+  <img class="card-img-top" src="../assets/images/okcupid.png" alt="Card image cap" style="margin-top: 100px">
+  <div class="card-block" data-id={{user.id}}>
+    <h2 class="card-title insert-username">Read some stories:  {{user.name}}!</h2>
+<!--     <p class="card-text">
+      Some quick example text to build on the card title
+      and make up the bulk of the card's content.
+    </p> -->
+
+
+{{!-- adding in a temp div just to see if stories work and no page set up yet --}}
+  <div class="container" style="margin-top: 35px">
+     <h1 style="" class="storyResults">Dating Stories</h1>
+
+{{#each Story}}
+
+        <div class="card col-md-6" id="storyDiv" style="padding: 30px; text-align: center">
+            <h4 class="category">{{this.category}}</h4>
+            <h4 class="title">{{this.title}}</h4>
+            <p class="story">{{this.story}}</p>
+         
+        </div>
+ {{/each}}
+
+
+  </div>
+{{!-- end of temp div for testing dating stories --}}
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+

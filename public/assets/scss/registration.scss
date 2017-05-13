@@ -1,0 +1,57 @@
+
+.appNameRP{
+  @include registrationPageName;
+  color: $purple;
+  top: 165px;
+  left: 50px;
+}
+
+.appNameTwoRP{
+  @include registrationPageName;
+    color: darken($purple, 80%);
+    // color: lighten($button-color, 100%);
+    top: 250px;
+    left: 50px;
+}
+
+.appNameThreeRP{
+  @include registrationPageName;
+  color: darken($purple, 70%);
+  // color: lighten($button-color, 80%);
+  top: 200px;
+  left: 50px;
+}
+
+.appNameFourRP{
+  @include registrationPageName;
+  color: darken($purple, 60%);
+  // color: lighten($button-color, 60%);
+  top: 150px;
+  left: 50px;
+}
+
+.appNameFiveRP{
+  @include registrationPageName;
+  color: darken($purple, 50%);
+  // color: lighten($button-color, 40%);
+  top: 100px;
+  left: 50px;
+}
+
+#loginExists {
+  position: absolute;
+  text-align: center;
+  top: 370px;
+  left: 110px;
+
+}
+
+#name, #email, #username, #password, #confirm, #profilePic {
+  width: 450px;
+
+}
+
+.theLowDwn {
+  color: $purple;
+  font-weight: bold;
+}

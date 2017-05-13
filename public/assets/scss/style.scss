@@ -1,59 +1,76 @@
 @import "mixins";
+@import "buttons";
+@import "variables";
+@import "frontpage";
+@import "homepageAndMyReviews";
+@import "registration";
+@import "login";
+@import "search";
+@import "blog";
+@import "reviewSummary";
 
-$title-font: 'Monoton', cursive;
-$background-color: #42b6b2;
-$title-font-color: #b64280;
-$icon-height: 150px;
-$icon-width: 150px;
-
-.appName{
-  @include titlePageName;
-  color: $title-font-color;
-        bottom: 0;
+body{
+  font-family: $body-font;
 }
 
-.appNameTwo{
-  @include titlePageName;
-    color: lighten($title-font-color, 40%);
-        bottom: 100px
+.navbar{
+  font-family: $body-font;
+  font-size: 18px;
+  background-color: $okcupid-teal;
+  border-color: $okcupid-teal;
 }
 
-.appNameThree{
-  @include titlePageName;
-  color: lighten($title-font-color, 60%);
-  bottom: 200px;
-}
-
-.appNameFour{
-  @include titlePageName;
-  color: lighten($title-font-color, 80%);
-  bottom: 300px;
-}
-
-.appNameFive{
-  @include titlePageName;
-  color: lighten($title-font-color, 100%);
-  bottom: 400px;
-}
-
-.landingPage{
-  background-color: $background-color;
-  height: 100vh;
-}
-
-.loginButton{
-  position: fixed;
-  top: 0;
-  right: 200px;
-  max-height: $icon-height;
-  max-width: $icon-width;
-}
-
-.newUserButton{
-  position: fixed;
-  top: 80px;
-  right: 200px;
-  max-height: $icon-height;
-  max-width: $icon-width;
+.navbar-brand {
+  font-family: $body-font;
+  font-size: 24px;
 
 }
+
+.mainContainer {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+
+.searchResults {
+  color: $okcupid-blue;
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+.title {
+  color: $okcupid-blue;
+}
+
+h1 {
+  color: $purple;
+  font-size: 50px;
+}
+
+h2 {
+
+   font-size: 40px;
+
+}
+
+#enterOkCupidUN {
+  font-size: 18px;
+
+}
+
+#lookupUser {
+  font-size: 18px;
+
+}
+
+
+

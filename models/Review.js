@@ -4,23 +4,94 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ReviewSchema = new Schema ({
-	username: {
+	datername: {
 		type: String,
 		required: true
 	},
-	questionOne: {
+	q1: {
 		type: String,
 		required: false
 	},
-	questionTwo: {
-		type: Integer,
+	q2: {
+		type: String,
 		required: false
 	},
-	questionThree: {
+	q3: {
 		type: String,
-		required: true
+		required: false
+	},
+	q4: {
+		type: String,
+		required: false
+	},
+	q4a: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q4b: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q4b1: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q4c: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q5: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q6: {
+		type: String,
+		required: false
+	},
+	q7: {
+		type: String,
+		required: false
+	},
+	q8: {
+		type: String,
+		required: false
+	},
+	q8a: {
+		type: String,
+		required: false,
+		default: null
+	},
+	q9: {
+		type: String,
+		required: false
+	},
+	q10: {
+		type: String,
+		required: false
+	},
+	q11: {
+		type: String,
+		required: false
+	},
+	nicety: {
+		type: String,
+		require: false,
+		default: null
+	},
+	score: {
+		type: String,
+		require: false
+		// will be calculated so may be required
+	},
+	image: {
+		type: String,
+		require: false
 	}
-	//not sure would reference any other table...
 });
 
 var Review = mongoose.model("Review", ReviewSchema);
