@@ -39,7 +39,7 @@ router.get("/:username", ensureAuthentication, function(req, res){
 
       console.log("UserIDDDD", userId);
       //trying to find reviews made by user based on userId
-      User.find({"_id": userId}).populate("reviews").exec(function(error, review) {
+      User.find({"_id": userId}).populate("review").exec(function(error, review) {
             console.log("review", review);
 
         if (error) {
@@ -63,13 +63,13 @@ router.get("/:username", ensureAuthentication, function(req, res){
 
             res.render("homepageAndReviews", {username: login, story: allStories, review: userReview});
           });//end of query
-        
+
         }//end of inside else
 
       });//end of search by id to get attempted reviews
-  
+
     }//end of if doc > 0
-  
+
   // var userId = doc._id;
   // console.log("userID", userId);
   });//end of exec function
