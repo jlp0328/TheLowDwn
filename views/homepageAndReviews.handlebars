@@ -12,26 +12,27 @@
     <div class="container" style="margin-top: 35px">
      <h1 style="" class="searchResults">My Reviews</h1>
 
-{{#each user}}
+{{#each review}}
 {{!-- {{#if this._id}}
  --}}
         <div class="card col-md-6" id="daterDiv" style="padding: 30px; text-align: center">
 
-            <img class="card-img-top" src="{{this.image}}">
+            <img class="card-img-top" src="{{this.review.image}}">
+              
               <div class="card-block">
-              <p style="font-size: 15px" class="card-title">{{this.username}}</p>
-              <p style="font-size: 15px" class="card-title">{{this.score}}</p>
-              <p style="font-size: 15px" class="card-title">{{this.nicety}}</p>
 
+                <p style="font-size: 15px" class="card-title">{{this.review.username}}</p>
+                <p style="font-size: 15px" class="card-title">{{this.review.score}}</p>
+                <p style="font-size: 15px" class="card-title">{{this.review.nicety}}</p>
 {{!--               <a data-id="{{this._id}}" class="btn btn-primary">Write Review!</a>
- --}}              </div>
+ --}}         </div>
 
         </div>
   {{!-- {{/if}} --}}
  {{/each}}
 
 
-        </div>
+    </div>
 
 </div>
 
@@ -50,9 +51,9 @@
 
         </div>
  {{/each}}
+    </div>
 
 
-  </div>
 {{!-- end of temp div for testing dating stories --}}
 
 
