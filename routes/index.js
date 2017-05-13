@@ -16,7 +16,8 @@ router.get("/", function(req, res){
 router.get("/:username", ensureAuthentication, function(req, res){
 
   var login = req.params.username;
-  console.log(login)
+  console.log("params", req.params);
+
   //set variable in order to have doc set to a more global variable
   var allStories;
   var userReview;
@@ -28,54 +29,53 @@ router.get("/:username", ensureAuthentication, function(req, res){
 
  ///////////////
 // //////testing to get userID from user table to use in the review table?
-User.findOne({username: login}).exec(function(error, doc) {
+  User.find({username: login}).exec(function(error, user) {
+
+    if (user.length > 0) {
+
+      console.log("how many times do you loop: ", user[0]._id);
+      //userId is from person logged into site
+      var userId = user[0]._id;
+
+      console.log("UserIDDDD", userId);
+      //trying to find reviews made by user based on userId
+      User.find({"_id": userId}).populate("reviews").exec(function(error, review) {
+            console.log("review", review);
 
         if (error) {
-            console.log(error);
-        }
-        else {
 
-        console.log("this is the doc:" + doc);
-        userId = doc._id;
-        console.log("userID", userId);
-  }
-
- });
-// closing findOne
-
-
-  // var userId = req.body._id;
-  // console.log(userId);
-
-  Review.find({"_id": userId})
-
-      .populate("creator")
-
-      .exec(function(error, doc) {
-        if (error) {
           console.log(error);
         }
-        userReview = doc;
-        console.log(doc.creator)
 
-      });
-// /////end testing
-//////////////
+        else {
 
-//KEEP
-//get stories from story table
-  query.exec(function(error, doc) {
-    if (error) {
-      console.log(error);
-    }
-    // console.log(doc);
-     allStories = doc;
-      // res.render("readstory", {story: doc});
-     res.render("homepageAndReviews", {username: login, story: allStories});
-  });
+          console.log("This is supposed to be the reviews:", review);
+          //setting callback of reviews to a variable to access it more globally in this router.
+          userReview = review;
+          //query to get the stories
+          query.exec(function(error, doc) {
+
+            if (error) {
+            console.log(error);
+            }
+            //setting callback to variable of allStories to access it globally for render
+            allStories = doc;
+
+            res.render("homepageAndReviews", {username: login, story: allStories, review: userReview});
+          });//end of query
+        
+        }//end of inside else
+
+      });//end of search by id to get attempted reviews
+  
+    }//end of if doc > 0
+  
+  // var userId = doc._id;
+  // console.log("userID", userId);
+  });//end of exec function
 
 
-  });
+});//of get username get
 
 
 //Search users to write dater reviews

@@ -141,6 +141,7 @@ app.get("/", function(req, res) {
 });
 
 
+
 //Scraping OkCupid based on daters username
 app.post("/dateScrape", function(req, res) {
   var result = {};
@@ -292,47 +293,3 @@ app.post("/reviewing", function(req, res) {
     res.send(doc);
   });
 });
-
-
-
-
-
-//trying to display dating stories from story table: set up in index.js file
-// app.get("/:username/blog", function(req, res) {
-
-//   var query = Story.find({});
-
-//   query.exec(function(error, doc) {
-//     if (error) {
-//       console.log(error);
-//     }
-//     console.log(doc);
-
-//       // res.render("readstory", {story: doc});
-
-//   });
-// });
-//end of trying to display dating stories
-
-
-
-////////////
-////////////////
-
-//Need to see about if user not in db, tell user either check spelling or no reviews made yet..
-
-//////////
-///////////
-//get reviews for user signed in...url router may not be correct
-//may also need to figure out how to make sure user id is available in this req.params. this will be user id of actual person signed in
-
-// app.get("/myAccount", function(req, res) {
-//   Review.find({"_id": req.params.id}).sort({$natural:-1}).exec(function(error, doc) {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       res.render("homepageAndReviews", {Review: doc}):
-//     }
-//   });
-
-// });
