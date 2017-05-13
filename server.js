@@ -160,7 +160,7 @@ app.post("/dateScrape", function(req, res) {
 
       req.flash("error_msg", "Please provide a valid username from OkCupid");
     }
-    
+
     else {
 
     $("div.userinfo2015").each(function (i, element) {
@@ -245,7 +245,7 @@ app.post("/:username/review", function(req, res){
             if(err) throw err;
             // console.log(review);
 
-        res.render("reviewSummary", {review: review});
+        res.render("reviewSummary", {review: review, username: user});
         req.flash("success_msg", "Your review has been successfully submitted!");
         });
 

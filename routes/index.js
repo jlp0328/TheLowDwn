@@ -14,17 +14,20 @@ router.get("/", function(req, res){
 
 //User Dashboard that has access to their personal reviews
 router.get("/:username", ensureAuthentication, function(req, res){
+
   var login = req.params.username;
   console.log("params", req.params);
+
   //set variable in order to have doc set to a more global variable
   var allStories;
   var userReview;
+  var userId;
   // var userId;
 
 //variable for find all stories in story table
   var query = Story.find({});
 
- /////////////// 
+ ///////////////
 // //////testing to get userID from user table to use in the review table?
   User.find({username: login}).exec(function(error, user) {
 
@@ -73,6 +76,7 @@ router.get("/:username", ensureAuthentication, function(req, res){
 
 
 });//of get username get
+
 
 //Search users to write dater reviews
 router.get("/:username/search", function(req, res){

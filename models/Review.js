@@ -8,6 +8,11 @@ var ReviewSchema = new Schema ({
 		type: String,
 		required: true
 	},
+	creator: {
+		type: Number,
+		ref: "User"
+	},
+
 	q1: {
 		type: String,
 		required: false
