@@ -7,8 +7,8 @@ var session = require("express-session");
 var passport = require("passport");
 var exphbs = require("express-handlebars");
 var request = require("request");
-var multer  = require('multer')
-var upload = multer({ dest: ".uploads/"}).single("profilePic");
+// var multer  = require('multer')
+// var upload = multer({ dest: ".uploads/"}).single("profilePic");
 
 var cheerio = require("cheerio");
 
