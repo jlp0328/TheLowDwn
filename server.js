@@ -7,6 +7,8 @@ var session = require("express-session");
 var passport = require("passport");
 var exphbs = require("express-handlebars");
 var request = require("request");
+var multer  = require('multer')
+var upload = multer({ dest: ".uploads/"}).single("profilePic");
 
 var cheerio = require("cheerio");
 
@@ -293,6 +295,31 @@ app.post("/reviewing", function(req, res) {
 
 
 
+
+
+//trying to display dating stories from story table: set up in index.js file
+// app.get("/:username/blog", function(req, res) {
+
+//   var query = Story.find({});
+
+//   query.exec(function(error, doc) {
+//     if (error) {
+//       console.log(error);
+//     }
+//     console.log(doc);
+
+//       // res.render("readstory", {story: doc});
+
+//   });
+// });
+//end of trying to display dating stories
+
+
+
+////////////
+////////////////
+
+//Need to see about if user not in db, tell user either check spelling or no reviews made yet..
 
 //////////
 ///////////
