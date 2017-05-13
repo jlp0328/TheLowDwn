@@ -9,10 +9,9 @@ var ReviewSchema = new Schema ({
 		required: true
 	},
 	creator: {
-		type: Number,
+		type: String,
 		ref: "User"
 	},
-
 	q1: {
 		type: String,
 		required: false
