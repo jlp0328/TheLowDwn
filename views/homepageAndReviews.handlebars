@@ -12,7 +12,7 @@
     <div class="container" style="margin-top: 35px">
      <h1 style="" class="searchResults">My Reviews</h1>
 
-{{#each review}}
+{{#each user}}
 {{!-- {{#if this._id}}
  --}}
         <div class="card col-md-6" id="daterDiv" style="padding: 30px; text-align: center">
@@ -23,8 +23,8 @@
               <p style="font-size: 15px" class="card-title">{{this.score}}</p>
               <p style="font-size: 15px" class="card-title">{{this.nicety}}</p>
 
-              <a data-id="{{this._id}}" class="btn btn-primary">Write Review!</a>
-              </div>
+{{!--               <a data-id="{{this._id}}" class="btn btn-primary">Write Review!</a>
+ --}}              </div>
 
         </div>
   {{!-- {{/if}} --}}
