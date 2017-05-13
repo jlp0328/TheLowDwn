@@ -8,7 +8,7 @@ var passport = require("passport");
 var exphbs = require("express-handlebars");
 var request = require("request");
 var multer  = require('multer')
-var upload = multer({ dest: ".uploads/"}).single("profilePic");
+// var upload = multer({ dest: ".uploads/"}).single("profilePic");
 
 var cheerio = require("cheerio");
 
@@ -46,6 +46,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(cookieParser());
+
 
 //Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
