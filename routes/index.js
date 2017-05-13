@@ -14,21 +14,51 @@ router.get("/", function(req, res){
 
 //User Dashboard that has access to their personal reviews
 router.get("/:username", ensureAuthentication, function(req, res){
-
   var login = req.params.username;
   //set variable in order to have doc set to a more global variable
   var allStories;
-  
+  var userReview;
+  // var userId;
+
+//variable for find all stories in story table
   var query = Story.find({});
 
+ /////////////// 
+// //////testing to get userID from user table to use in the review table?
+User.findOne({username: login}).exec(function(error, doc) {
+  if (error) {
+      console.log(error);
+  }
+  else {
+    
+  console.log(doc);
+  var userId = doc._id;
+  console.log("userID", userId);
+  }
+
+});
+
+
+  // var userId = req.body.id;
+  // Review.find({"_id": userId}).exec(function(error, doc) {
+  //   if (error) {
+  //     console.log(error);
+  //   }
+  //   userReview = doc;
+    
+  // });
+// /////end testing
+//////////////
+
+//KEEP
+//get stories from story table
   query.exec(function(error, doc) {
     if (error) {
       console.log(error);
     }
     // console.log(doc);
-     allStories =doc;
-      // res.render("readstory", {story: doc});
-    
+     allStories = doc;
+      // res.render("readstory", {story: doc});   
      res.render("homepageAndReviews", {username: login, story: allStories});
   });
 

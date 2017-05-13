@@ -156,8 +156,10 @@ app.post("/dateScrape", function(req, res) {
     var daterInfo = $("div.userinfo2015");
     if(daterInfo.length == 0) {
       console.log("homie don't play dat");
-        req.flash("error_msg", "Please provide a valid username from OkCupid");
+
+      req.flash("error_msg", "Please provide a valid username from OkCupid");
     }
+    
     else {
 
     $("div.userinfo2015").each(function (i, element) {
@@ -274,21 +276,23 @@ app.post("/:username/blog", function(req, res) {
 });
 //end of posting dating story
 
-//using datername to search in daterbase for dater
+//using datername to search in daterbase for dater and sending info to app.js fn
 app.post("/reviewing", function(req, res) {
 
   var datername = req.body.datername;
 
   console.log("reviewDatername: ", datername);
 
-  Review.find({"datername":datername}).exec(function(error, doc) {
+  Review.find({datername:datername}).exec(function(error, doc) {
     if (error) {
     console.log(error);
     }
-    console.log("doc: ", doc.datername);
+    // console.log(doc);
+    // console.log("doc: ", doc[0].datername);
     res.send(doc);
   });
 });
+
 
 
 
