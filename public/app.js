@@ -4,6 +4,12 @@ $('#myModal').on('shown.bs.modal', function () {
 });
 
 
+$('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
+
+
 //findDaterButton will id of button to search for dater on Okcupid
 $(document).on("click", ".findDater", function(e) {
 
@@ -54,7 +60,7 @@ $(document).on("click", "#yesDater", function(e) {
 	$("#inputDatername").attr("value", daterName);
 	$("#inputDaterImage").attr("value", daterImage);
 
-	
+
 });
 /////////////////////////
 ///////////////
@@ -80,7 +86,7 @@ $(document).on("click", ".findReview", function(e) {
 
 		if (data.length == 0) {
 			html = "<p class='card-title'>No Reviews Submitted</p>";
-			
+
 		}
 		//loop through the array to get the rest of info
 		else {
@@ -104,7 +110,7 @@ $(document).on("click", ".findReview", function(e) {
 		  html = "<p class='card-title'>" + datername + "</p>" +
 			      "<img class='card-img-top pic' src=" + daterImage + ">" +
 			      "<p>Score: " + sum + "</p>" +
-			      "<p>Some Nice Things said about " + datername + ": " + niceThings; 
+			      "<p>Some Nice Things said about " + datername + ": " + niceThings;
 
 		}//end of else
 

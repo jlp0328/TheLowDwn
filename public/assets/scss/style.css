@@ -82,9 +82,53 @@
 .useCases-ul {
   font-size: 24px; }
 
+.flip {
+  -webkit-perspective: 800;
+  perspective: 800;
+  position: relative;
+  text-align: center; }
+
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+  transform: rotatey(-180deg); }
+
+.flip .card {
+  width: 270px;
+  height: 178px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  background-color: #fff; }
+
+.flip .card .face {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 2; }
+
+.flip .card .front {
+  position: absolute;
+  width: 270px;
+  z-index: 1; }
+
+.flip .card .img {
+  position: relaitve;
+  width: 270px;
+  height: 178px;
+  z-index: 1;
+  border: 2px solid #000; }
+
+.flip .card .back {
+  padding-top: 10%;
+  -webkit-transform: rotatey(-180deg);
+  transform: rotatey(-180deg); }
+
+.inner {
+  margin: 0px !important; }
+
 .appNameRP {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: #ae029b;
@@ -93,7 +137,7 @@
 
 .appNameTwoRP {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -102,7 +146,7 @@
 
 .appNameThreeRP {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -111,7 +155,7 @@
 
 .appNameFourRP {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -120,7 +164,7 @@
 
 .appNameFiveRP {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -142,7 +186,7 @@
 
 .appNameLogin {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: #ae029b;
@@ -151,7 +195,7 @@
 
 .appNameTwoLogin {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -160,7 +204,7 @@
 
 .appNameThreeLogin {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -169,7 +213,7 @@
 
 .appNameFourLogin {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -178,7 +222,7 @@
 
 .appNameFiveLogin {
   font-family: "Monoton", cursive;
-  font-size: 65px;
+  font-size: 62px;
   position: absolute;
   text-align: center;
   color: black;
@@ -229,6 +273,12 @@
   margin-top: 5px;
   font-size: 20px; }
 
+.card-img-bottom {
+  color: #fff;
+  height: 20rem;
+  background: url(images/img1.jpg) center no-repeat;
+  background-size: cover; }
+
 #storyCategory {
   height: 50px;
   width: 300px; }
@@ -276,7 +326,8 @@ body {
   width: 100%;
   height: 60px;
   padding: 1rem;
-  text-align: center; }
+  text-align: center;
+  margin-top: 300px; }
 
 .title {
   color: #084AA4; }
