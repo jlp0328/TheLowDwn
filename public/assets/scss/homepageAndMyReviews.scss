@@ -7,46 +7,53 @@
 
 }
 
-.flip {
-  -webkit-perspective: 800;
-          perspective: 800;
-        position: relative;
-        text-align: center;
+.card-title {
+  color: $okcupid-blue;
 }
-.flip .card.flipped {
-  -webkit-transform: rotatey(-180deg);
-          transform: rotatey(-180deg);
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+  border: 5px solid $okcupid-blue;
+  margin-bottom: 20px;
 }
-.flip .card {
-    width: 270px;
-    height: 178px;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: 0.5s;
-    transform-style: preserve-3d;
-    transition: 0.5s;
-    background-color: #fff;
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 480px;
+  height: 250px;
 
 }
-.flip .card .face {
-  -webkit-backface-visibility: hidden ;
-    backface-visibility: hidden ;
-   z-index: 2;
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
 }
-.flip .card .front {
-   position: absolute;
-   width: 270px;
-   z-index: 1;
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.flip .card .img {
-   position: relaitve;
-   width: 270px;
-   height: 178px;
-   z-index: 1;
-   border: 2px solid #000;
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  padding: 20px;
 }
-.flip .card .back {
-  padding-top: 10%;
-  -webkit-transform: rotatey(-180deg);
-          transform: rotatey(-180deg);
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  padding: 20px;
 }
-  .inner{margin:0px !important;}
