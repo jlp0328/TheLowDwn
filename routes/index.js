@@ -111,6 +111,12 @@ router.get("/:username/blog", function(req, res){
   res.render("blog", {username: login});
 });
 
+// router.get("/:username/blog", function(req, res){
+//    var login = req.params.username;
+
+//   res.render("blog", {username: login});
+// });
+
 
 
 function ensureAuthentication(req, res, next){

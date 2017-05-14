@@ -272,8 +272,13 @@ app.post("/:username/blog", function(req, res) {
     entry.save(function (err, doc) {
       if (err) throw err;
 
-    res.render("readstory", {story: doc});
+    // res.render("readstory", {story: entry, username: username});
+
+    req.flash("success_msg", "Thank you for sharing! Your story has been successfully submitted!");
+    res.redirect("/" + username);
     });
+
+
 
 });
 //end of posting dating story

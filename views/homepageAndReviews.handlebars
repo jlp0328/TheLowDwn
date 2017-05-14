@@ -1,4 +1,10 @@
 
+        {{#if errors}}
+          {{#each errors}}
+          <div class="alert alert-danger">{{msg}}</div>
+          {{/each}}
+          {{/if}}
+
 <div class="card col-md-6">
   <img class="card-img-top" src={{user.image}} alt="Card image cap" style="margin-top: 100px">
   <div class="card-block" data-id={{user.id}}>
