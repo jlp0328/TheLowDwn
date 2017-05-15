@@ -22,6 +22,11 @@ var StorySchema = new Schema ({
 	story: {
 		type: String,
 		required: true
+	},
+
+	display: {
+		type: Boolean,
+		default: false
 	}
 
 });

@@ -3,7 +3,7 @@ var ReactDOM = require("react-dom");
 
 
 ReactDOM.render(
-  <div>
+  <footer>
     Copyright 2017
-  </div>
+  </footer>
   , document.getElementById("Footer"));
