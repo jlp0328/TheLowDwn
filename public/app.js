@@ -107,10 +107,10 @@ $(document).on("click", ".findReview", function(e) {
 		  	return a + b;
 		  })/score.length;
 
-		  html = "<p class='card-title'>" + datername + "</p>" +
+		  html = "<p class='card-title' id='daterName'>" + datername + "</p>" +
 			      "<img class='card-img-top pic' src=" + daterImage + ">" +
-			      "<p>Score: " + sum + "</p>" +
-			      "<p>Some Nice Things said about " + datername + ": " + niceThings;
+			      "<p id='daterScore'>Score: " + sum + "</p>" +
+			      "<p id='niceThings'>Some Nice Things said about " + datername + ": " + niceThings;
 
 		}//end of else
 
