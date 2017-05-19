@@ -39,7 +39,7 @@ router.get("/:username", ensureAuthentication, function(req, res){
 
       console.log("UserIDDDD", userId);
       //trying to find reviews made by user based on userId
-      User.find({"_id": userId}).populate("review").exec(function(error, review) {
+      Review.find({"_id": "5912431b0eece0121598fc55"}).populate("review").exec(function(error, review) {
             console.log("review", review);
 
         if (error) {
