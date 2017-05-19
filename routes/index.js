@@ -99,6 +99,7 @@ router.get("/:username/review", function(req, res){
 
 //Search for a user in the db to read their reviews
 router.get("/:username/read", function(req, res){
+
    var login = req.params.username;
 
   res.render("searchExistingReviews", {username: login});

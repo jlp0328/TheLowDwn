@@ -107,16 +107,17 @@ $(document).on("click", ".findReview", function(e) {
 		  	return a + b;
 		  })/score.length;
 
-		  html = "<p class='card-title' id='daterName'>" + datername + "</p>" +
-			      "<img class='card-img-top pic' src=" + daterImage + ">" +
-			      "<p id='daterScore'>Score: " + sum + "</p>" +
-			      "<p id='niceThings'>Some Nice Things said about " + datername + ": " + niceThings;
+		  html = "<h2 class='' id='daterName'>" + datername + "</h2>" +
+			      "<img class='datercard' src=" + daterImage + ">" +
+			      "<h2 id='daterScore'> <span class='makeBold'>Score:</span> " + sum + "</h2>" +
+			      "<h2 id='niceThings'><span class='makeBold'>Some Nice Things said about " + datername + ":</span> " + niceThings;
 
 		}//end of else
 
 
 		$("#reviewDiv").append(html);
 		$("#readReviewSearch").val("");
+		$("#reviewDiv").addClass("cardBorder");
 
 
 	});

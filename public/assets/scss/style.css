@@ -233,12 +233,14 @@
   top: 250px;
   left: 90px; }
 
-.card-img-top {
+.datercard {
   height: 300px;
-  width: 300px; }
+  width: 300px;
+  position: absolute;
+  right: 20px; }
 
 #daterName {
-  font-size: 30px;
+  font-size: 40px;
   color: #ae029b; }
 
 #daterLocation, #daterAge, #daterScore, #niceThings {
@@ -276,6 +278,21 @@
   height: 20rem;
   background: url(images/img1.jpg) center no-repeat;
   background-size: cover; }
+
+#niceThings {
+  width: 250px;
+  margin-right: 325px; }
+
+#daterScore {
+  width: 250px;
+  margin-right: 500px; }
+
+.cardBorder {
+  border: 1px #084AA4 solid; }
+
+.makeBold {
+  font-weight: bold;
+  color: #ae029b; }
 
 #storyCategory {
   height: 50px;
