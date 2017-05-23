@@ -10,6 +10,10 @@
 .card-title {
   color: $okcupid-blue;
 }
+
+.card-img-top{
+  width: 300px;
+}
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;

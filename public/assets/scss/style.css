@@ -85,6 +85,9 @@
 .card-title {
   color: #084AA4; }
 
+.card-img-top {
+  width: 300px; }
+
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
